@@ -9,40 +9,26 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <title>Login</title>
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            display: grid;
+             grid-template-rows: auto 1fr;
+             align-items: center;
+            justify-items: center;
+             min-height: 100vh;
             background: #f5f5f5;
         }
 
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2em;
-        }
-
-        .logo-container img {
-            width: 300px;
-            height: 180px;
-            justify-self: center;
-        }
-
         .login-container {
+            margin-top: 0.5em;
             background-color: white;
-            padding: 2.5em 3.5em;
+            padding: 3em 4em;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .login-container h2 {
             text-align: center;
+            margin-top: 0;
             margin-bottom: 1.5em;
             font-size: 24px;
         }
@@ -74,9 +60,7 @@
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="images/logo-transparent.png" alt="Marmora Hardware Logo">
-    </div>
+    <img src="images/logo-transparent.png" alt="Marmora Hardware Logo" width="400" height="180" style="padding-top: 10px; margin-top: 20px;">
     <div class="login-container">
         <h2>Login</h2>
         <form class="login-form" action="your_login_script.php" method="post">
