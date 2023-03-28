@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <title>Login</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2em;
+        }
+
+        .logo-container img {
+            width: 300px;
+            height: 180px;
+            justify-self: center;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 2.5em 3.5em;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 1.5em;
+            font-size: 24px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em;
+        }
+
+        .login-form input {
+            padding: 0.75em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .login-form input[type="submit"] {
+            background-color: #0077cc;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="images/logo-transparent.png" alt="Marmora Hardware Logo">
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form class="login-form" action="your_login_script.php" method="post">
+            <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
