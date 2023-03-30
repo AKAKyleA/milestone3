@@ -31,7 +31,7 @@ echo "<table border='1'>
 <th>ID</th>
 <th>Date</th>
 <th>Items</th>
-<th>items</th>
+<th></th>
 <th>Amount</th>
 </tr>";
 
