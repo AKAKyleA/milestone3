@@ -1,111 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box}
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <title>Sign Up</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            align-items: center;
+            justify-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
-}
+        .signup-container {
+            margin-top: -2em;
+            background-color: white;
+            padding: 3em 4em;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
+        .signup-container h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5em;
+            font-size: 24px;
+        }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em;
+        }
 
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
+        .signup-form input {
+            padding: 0.75em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
 
-/* Set a style for the submit/register button */
-.registerbtn {
-  background-color: #e87800;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
+        .signup-form input[type="submit"] {
+            background-color: #0077cc;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
 
-.registerbtn:hover {
-  opacity:1;
-}
+        .signup-form input[type="submit"]:hover {
+            background-color: #005fa3;
+        }
 
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
+        .additional-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1em;
+        }
 
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
+        .additional-options a {
+            color: black;
+            text-decoration: none;
+        }
 
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
-</style>
+        .additional-options a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-
-
-  
-    <div class="container">
-      <form action="signup.php" method="post" >
-        <div class="imgcontainer">
-          <img src="images/loginlogo.jpg" alt="Avatar" class="avatar">
-        </div>
-      <h1>Sign Up</h1>
-      
-      <hr>
-       
-      <label for="firstname"><b>First Name</b></label>
-      <input type="text" placeholder="Enter First Name" name="firstname" id="firstname" required>
-
-      <label for="lastname"><b>Last Name</b></label>
-      <input type="text" placeholder="Enter Last Name" name="lastname" id="lastname" required>
-
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required>
-  
-      <label for="password"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" id="password" required>
-  
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-      <hr>
-  
-      
-      <button type="submit" class="registerbtn">Register</button>
-    </div>
-  
-    <div class="container signin">
-      <p>Already have an account? <a href="login.html">Sign in</a>.</p>
-    </div>
-  </form>
-  </body>
-</html>
+    <img src="images/logo-transparent.png" alt="Marmora Hardware Logo" width="400" height="180" style="padding-top: 10px; margin-top: 40px;">
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form class="signup-form" action="register.php" method="post">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="repeat_password" placeholder="Repeat Password" required>
+            <input type="submit" value="Sign Up">
+        </form>
+        <div class="additional-options">
+            <p style="margin-top: 5px;">Already have an account? <a href="login.html" style="text-decoration: underline;">Log in.</a></p>
+          </div>
+          </div>
+          
+          </body>
+          </html>
