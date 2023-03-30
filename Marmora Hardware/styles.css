@@ -5,15 +5,15 @@
 }
 
 @font-face {
-    font-family: 'KirstyRg-Regular';
-    src: url('fonts/KirstyRg-Regular.woff2') format('woff2'),
-         url('fonts/KirstyRg-Regular.woff') format('woff');
+    font-family: 'CoolveticaRg-Regular';
+    src: url('CoolveticaRg-Regular.woff2') format('woff2'),
+         url('CoolveticaRg-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'KirstyRg-Regular', sans-serif;
+    font-family: 'CoolveticaRg-Regular', sans-serif;
     background-color: white;
     line-height: 1.6;
 }
@@ -281,6 +281,46 @@ nav a:hover {
     line-height: 1.6;
     color: #333;
     }
+
+    .history-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+      
+      .history-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      
+      .history-images {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+      }
+      
+      .history-image {
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+      }
+      
+      .history-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      
+      .history-description {
+        margin: 0 2rem;
+        max-width: 800px;
+      }
+      
     
     footer {
         background-color: #1a1a1a;
