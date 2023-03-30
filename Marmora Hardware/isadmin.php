@@ -36,7 +36,7 @@
 				<input name="Button9" style="width: 142px; height: 41px" type="button" value="View Schedule"></div>
 			<br>
 			<div class="auto-style3">
-				<input name="Button10" style="width: 155px; height: 44px" type="button" value="Log Transactions"></div>
+				<button onclick ="window.location.href='logtransactions.php';" name="Button5" type="button" value="Log transactions" >Log transactions</button></div>
 		</div>
 	</div>
 </form>
