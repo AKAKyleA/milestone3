@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <title>Login</title>
+    <title>Log In</title>
     <style>
         body {
             display: grid;
-             grid-template-rows: auto 1fr;
-             align-items: center;
+            grid-template-rows: auto 1fr;
+            align-items: center;
             justify-items: center;
-             min-height: 100vh;
+            min-height: 100vh;
             background: #f5f5f5;
+            font-family: Arial, sans-serif;
         }
 
         .login-container {
-            margin-top: -5em;
             background-color: white;
             padding: 3em 4em;
             border-radius: 10px;
@@ -30,7 +30,8 @@
             text-align: center;
             margin-top: 0;
             margin-bottom: 1.5em;
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
         }
 
         .login-form {
@@ -39,14 +40,16 @@
             gap: 1.5em;
         }
 
-        .login-form input {
+        .login-form input,
+        .login-form button {
             padding: 0.75em;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 18px;
         }
 
-        .login-form input[type="submit"] {
+        .login-form input[type="submit"],
+        .login-form button[type="button"] {
             background-color: #0077cc;
             color: white;
             cursor: pointer;
@@ -54,27 +57,54 @@
             transition: background-color 0.3s;
         }
 
-        .login-form input[type="submit"]:hover {
+        .login-form input[type="submit"]:hover,
+        .login-form button[type="button"]:hover {
             background-color: #005fa3;
+        }
+
+        .login-form button[type="button"].go-back-btn {
+            background-color: #f5f5f5;
+            color: #0077cc;
+            border: 1px solid #0077cc;
+            margin-top: -0.5em;
+        }
+
+        .login-form button[type="button"].go-back-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .additional-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1em;
+        }
+
+        .additional-options a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        .additional-options a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <img src="images/logo-transparent.png" alt="Marmora Hardware Logo" width="400" height="180" style="padding-top: 10px; margin-top: 40px;">
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>Log In</h2>
         <form class="login-form" action="login.php" method="post">
-            <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <input type="email" name="email" placeholder="Email" >
             <input type="password" name="password" placeholder="Password" required>
             <input type="submit" value="Login">
-            <div class="container" style="background-color:#f1f1f1">
-                <button onclick ="window.location.href='index.html';" type="button" class="cancelbtn"  >Cancel</button>
-                
-                <span class="psw">Forgot <a href="#">password?</a></span>
-                <p>Don't have an account? <a href="signup.html">Sign up</a>.</p>
-              </div>
-        </form>
-    </div>
-    
-</body>
-</html>
+            <button type="button" class="go-back-btn" onclick="window.location.href='index.html'">Go Back</button>
+            </form>
+            <div class="additional-options">
+            <p style="margin-top: 5px;">Don't have an account? <a href="signup.html">Sign up.</a></p>
+            <a href="forgot-password.html">Forgot Password?</a>
+            </div>
+            </div>
+            
+            </body>
+            </html>
