@@ -5,7 +5,9 @@
     <link rel="icon" href="images/logo.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>About Us - Marmora Hardware</title>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <title>About</title>
 </head>
 <body>
     <header>
@@ -26,61 +28,140 @@
             </ul>
             <button class="login-btn">Login</button>
         </nav>
-        <div class="about-banner">
-            <img src="images/about.jpg" alt="About Us Banner" width="100%">
-            <div class="about-banner-text">
-                <h2>Who we are</h2>
-                <p>Marmora Hardware is a family-owned and operated hardware store located in Marmora, NJ. We have been serving the local community since 1960, and we take pride in providing high-quality products and exceptional customer service. Our store is stocked with a wide selection of hardware, tools, lumber, and more to help you with any project, big or small.</p>
-                <h2>How we work</h2>
-                <ul>
-                    <li>We prioritize customer service and satisfaction above all else.</li>
-                    <li>We offer a wide range of high-quality products to meet your hardware needs.</li>
-                    <li>Our knowledgeable staff is always available to assist you with your projects.</li>
-                    <li>We believe in building strong relationships with our customers to ensure your long-term success.</li>
-                </ul>
-            </div>
-        </div>
     </header>
-    <main>
-        <section class="about">
-            <h1>About Us</h1>
-            <p>Marmora Hardware is a family-owned and operated hardware store located in Marmora, NJ. We have been serving the local community since 1960, and we take pride in providing high-quality products and exceptional customer service. Our store is stocked with a wide selection of hardware, tools, lumber, and more to help you with any project, big or small.</p>
-            <p>Our knowledgeable staff is always ready to assist you with your hardware needs. Whether you're a DIY enthusiast or a professional contractor, we have the expertise to help you find the right tools and materials for your project. We believe that building strong relationships with our customers is the key to our success, and we're committed to providing a friendly and welcoming environment for everyone who walks through our doors.</p>
-        </section>
-    </main>
+	
+
+<style>
+body {
+font-family: Arial, Helvetica, sans-serif;
+margin: 0;
+}
+
+html {
+box-sizing: border-box;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
+.column {
+float: left;
+width: 33.3%;
+margin-bottom: 16px;
+padding: 0 8px;
+}
+
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+margin: 8px;
+}
+
+.about-section {
+padding: 50px;
+text-align: center;
+background-color: #474e5d;
+color: white;
+}
+
+.container {
+padding: 0 16px;
+}
+
+.container::after, .row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+.title {
+color: grey;
+}
+
+.button {
+border: none;
+outline: 0;
+display: inline-block;
+padding: 8px;
+color: white;
+background-color: #000;
+text-align: center;
+cursor: pointer;
+width: 100%;
+}
+
+.button:hover {
+background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+.column {
+width: 100%;
+display: block;
+}
+}
+</style>
+
+<div class="about-section">
+<h1>About Us </h1>
+<p>Marmora Hardware has been providing exceptional products and services to our customers for over 60 years. We take pride in our ability to assist in any project, whether it's helping our in-store customers with DIY projects or supplying contractors with large-scale orders. Our goal is to become a one-stop-shop for all your hardware needs. Come visit us and let us help you tackle your next project!</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+<div class="column">
+<div class="card">
+<img src="/w3images/team1.jpg" alt="" style="width:100%">
+<div class="container">
+<h2>A</h2>
+<p class="title">Owner</p>
+<p>Some text that describes me.</p>
+<p>@example.com</p>
+</div>
+</div>
+</div>
+
+<div class="column">
+<div class="card">
+<img src="/w3images/team2.jpg" alt="" style="width:100%">
+<div class="container">
+<h2>B</h2>
+<p class="title">Manager</p>
+<p>Some text that describes me.</p>
+<p>@example.com</p>
+</div>
+</div>
+</div>
+
+<div class="column">
+<div class="card">
+<img src="/w3images/team3.jpg" alt="" style="width:100%">
+<div class="container">
+<h2>C</h2>
+<p class="title">Employee</p>
+<p>Some text that describes me.</p>
+<p>@example.com</p>
+</div>
+</div>
+</div>
+</div>
+
+</body>
     <footer>
-        <div class="footer-top">
-            <img src="images/truevalue.png" alt="Marmora Hardware Logo" width="200" height="80">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>29 S Shore Rd, Marmora, NJ 08223</p>
-            <p>Phone: (609) 390-8499</p>
-            <p>Mon-Sat: 8am-5pm, Sun: 9am-3pm</p>
-            <a href="https://www.facebook.com/people/Marmora-Hardware/100032190926433/" target="_blank">Facebook</a>
-        </div>
-    </footer>
-    
-    
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="slick/slick.min.js"></script>
-        <script>
-            $(document).ready(function(){
-            $('.carousel').slick({
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: true,
-                prevArrow: '<button type="button" class="slick-prev">&#10094;</button>',
-                nextArrow: '<button type="button" class="slick-next">&#10095;</button>'
-            });
-        });
-        </script>
-    </body>
-    </html>
+    <div class="footer-top">
+        <img src="images/truevalue.png" alt="Marmora Hardware Logo" width="200" height="80">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>29 S Shore Rd, Marmora, NJ 08223</p>
+        <p>Phone: (609) 390-8499</p>
+        <p>Mon-Sat: 8am-5pm, Sun: 9am-3pm</p>
+        <a href="https://www.facebook.com/people/Marmora-Hardware/100032190926433/" target="_blank">Facebook</a>
+    </div>
+</footer>
