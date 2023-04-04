@@ -22,6 +22,11 @@ header {
     position: relative;
 }
 
+.logout-link {
+    margin-right: 10px; /* Adjust this value to your desired spacing between Logout and Settings buttons */
+}
+
+
 .top-bar {
     display: flex;
     justify-content: space-between;

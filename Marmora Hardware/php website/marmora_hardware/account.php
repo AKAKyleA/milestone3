@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,7 +174,9 @@ nav a:not(.login-link):hover {
     }
     </style>
 </head>
+
 <body>
+
     <header>
         <div class="top-bar">
             <p>29 S Shore Rd, Marmora, NJ 08223</p>
@@ -191,13 +200,14 @@ nav a:not(.login-link):hover {
     </header>
 
     <div class="main-content">
-
+    
     <div class="account-grid">
         <div class="account-container">
             <h2>Account Information</h2>
             <div class="account-info">
                 <div class="account-info-text">
-                    <p>First Name: <span class="value">John</span></p>
+                    <p>First Name: <span class="value"><?php echo
+$_SESSION['firstname']; ?></span></p>
                     <p>Last Name: <span class="value">Doe</span></p>
                     <p>Email: <span class="value">johndoe@example.com</span></p>
                 </div>
@@ -206,15 +216,20 @@ nav a:not(.login-link):hover {
                 <button onclick="window.location.href='order_history.html'">View Order History</button>
             </div>
             
+       
             
     </div>
     <!-- Employee section -->
-    <?php if ($permission == 'employee') { ?>
+    <?php 
+    
+
+    if ($_SESSION["isEmployee"] == 1) { ?>
     <div class="account-container">
         <h2>Employee Information</h2>
         <div class="account-info">
             <div class="account-info-text">
-                <p>First Name: <span class="value">John</span></p>
+                <p>First Name: <span class="value"><?php echo
+$_SESSION['firstname']; ?></span></p>
                 <p>Last Name: <span class="value">Doe</span></p>
                 <p>Email: <span class="value">johndoe@example.com</span></p>
             </div>
@@ -226,7 +241,7 @@ nav a:not(.login-link):hover {
 </div>
 <div class="account-grid">
     <!-- Manager section -->
-<?php if ($permission == 'manager') { ?>
+<?php if ($_SESSION["isManager"] == 1) { ?>
     <div class="account-container">
         <h2 style="text-align: center; margin-bottom: 1em;">Manager Information</h2>
         <div style="text-align: center;">
@@ -237,7 +252,7 @@ nav a:not(.login-link):hover {
 <?php } ?>
 
 <!-- Admin section -->
-<?php if ($permission == 'admin') { ?>
+<?php if ($_SESSION["isAdmin"] == 1) { ?>
     <div class="account-container">
         <h2 style="text-align: center; margin-bottom: 1em;">Admin Information</h2>
         <div style="text-align: center;">
@@ -269,5 +284,8 @@ nav a:not(.login-link):hover {
         <a href="https://www.facebook.com/people/Marmora-Hardware/100032190926433/" target="_blank">Facebook</a>
     </div>
 </footer>
+
 </body>
+
+
 </html>
