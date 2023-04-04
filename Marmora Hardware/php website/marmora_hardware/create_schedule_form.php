@@ -95,33 +95,6 @@ input[type=submit]:hover, button:hover {
     <form action="create_schedule.php" method="post">
         <label for="employee">Employee:</label>
         <select name="employee" id="employee">
-            <!-- PHP code to fetch employee names and IDs from the database should go here -->
-            <!-- <?php
-    // Connect to the database
-    // $connection = new mysqli('localhost', 'username', 'password', 'database_name');
-
-    // Check the connection
-    // if ($connection->connect_error) {
-    //     die('Connection failed: ' . $connection->connect_error);
-    // }
-
-    // Fetch employee names and IDs
-    // $sql = 'SELECT id, first_name, last_name FROM employees';
-    // $result = $connection->query($sql);
-
-    // Display employee names and IDs
-    // if ($result->num_rows > 0) {
-    // if ($result->num_rows > 0) {
-        //     while ($row = $result->fetch_assoc()) {
-        //         echo '<option value="' . $row['id'] . '">' . $row['first_name'] . ' ' . $row['last_name'] . '</option>';
-        //     }
-        // } else {
-        //     echo '<option value="">No employees found</option>';
-        // }
-    
-        // Close the connection
-        // $connection->close();
-    ?> -->
             <option value="1">John Doe</option>
             <option value="2">Jane Smith</option>
         </select>
