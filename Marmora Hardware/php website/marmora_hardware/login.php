@@ -4,7 +4,7 @@
 session_start();
 $servername = "127.0.0.1";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "hardstore";
 
 
@@ -119,7 +119,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
                 $_SESSION['lastname'] = $row['lastname'];
 
-                header("Location: welcome.php");
+                $_SESSION['loggedin'] = true;
+
+                header("Location: index.php");
 
                 exit();
 
