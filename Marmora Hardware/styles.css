@@ -5,15 +5,15 @@
 }
 
 @font-face {
-    font-family: 'Roboto-Regular';
-    src: url('fonts/Roboto-Regular.woff2') format('woff2'),
-         url('fonts/Roboto-Regular.woff') format('woff');
+    font-family: 'CoolveticaRg-Regular';
+    src: url('CoolveticaRg-Regular.woff2') format('woff2'),
+         url('CoolveticaRg-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'Roboto-Regular', sans-serif;
+    font-family: 'CoolveticaRg-Regular', sans-serif;
     background-color: white;
     line-height: 1.6;
 }
@@ -49,7 +49,7 @@ nav ul {
     display: flex;
     justify-content: space-around;
     width: 35%;
-    margin-left: -1%;
+    margin-left: -1%; /* Add this line to move the buttons to the left */
 }
 
 nav li {
@@ -59,19 +59,12 @@ nav li {
 nav a {
     color: #333;
     text-decoration: none;
-    font-size: 22px;
-    padding: 12px 20px;
-    display: inline-block;
+    font-size: 22px; /* Increase the font size */
+    transition: color 0.3s;
 }
 
-nav a:not(.login-link):hover {
-    background-color: lightgray;
-    color: #ffffff;
-}
-
-.login-link {
-    display: inline-block;
-    margin-right: 240px;
+nav a:hover {
+    color: #0077cc;
 }
 
 .login-btn {
@@ -82,14 +75,14 @@ nav a:not(.login-link):hover {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-right: 240px;
 }
 
 .login-btn:hover {
-    background-color: #007bff;
-    color: #ffffff;
-    border-color: #007bff;
+    background-color: #0077cc;
+    color: white;
+    border-color: #0077cc;
 }
-
 
 .carousel img {
     width: 100%;
@@ -197,16 +190,16 @@ nav a:not(.login-link):hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2em 2em 4em 2em;
-    margin-top: -20px;
-    gap: 4em;
+    padding: 2em 2em 6em 2em;
+    gap: 6em;
     }
     
     .lawn-garden .image-container img {
-        width: 550px;
-    height: 350px;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
     .lawn-garden .text-container {
@@ -230,8 +223,7 @@ nav a:not(.login-link):hover {
     align-items: center;
     justify-content: center;
     padding: 2em;
-    gap: 4em;
-    margin-bottom: -20px;
+    gap: 6em;
     }
     
     .lumber-yard .text-container {
@@ -251,9 +243,10 @@ nav a:not(.login-link):hover {
     }
     
     .lumber-yard .image-container img {
-    width: 550px;
-    height: 350px;
+    width: 600px;
+    height: 400px;
     object-fit: cover;
+    border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
@@ -381,115 +374,69 @@ nav a:not(.login-link):hover {
         .footer-bottom a:hover {
         color: #0077cc;
         }
-        /* About Page CSS */
+/*--------------services---------*/
 
-        .additional-photos {
+        .container{
+            max-width: 1200px;
+            margin: auto;
+        }
+        .product-items {
+            display: inline-block;
+            width: 1200px;
+            margin-right: 10px;
+            vertical-align: top;
+        }
+        .product-item {
+            width: calc(20% - 10px);
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 12px;
+            text-align: center;
+        }
+        .product-item img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .product-item-text {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 20px 0;
-            }
-            .about-page-header {
-                padding-top: 20px;
-                padding-bottom: 25px;
-                text-align: center;
-                }
-                
-                .our-history {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background-color: #f3f3f3;
-                padding: 40px;
-                }
-                
-                .our-history-text {
-                width: 45%;
-                padding-left: 20px;
-                }
-
-                .additional-photos img {
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    margin-bottom: 20px;
-                    transition: all 0.3s ease;
-                }
-                
-                .additional-photos img:hover {
-                    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-                    transform: translateY(-3px);
-                }
-                
-                .history-image {
-                width: 45%;
-                margin-right: 25px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
-                }
-                
-                .history-image img {
-                width: 100%;
-                height: auto;
-                }
-                
-                .marmora-today {
-                text-align: center;
-                padding: 40px;
-                max-width: 800px;
-                margin: auto;
-                }
-                
-                .meet-our-staff {
-                background-color: #f3f3f3;
-                padding: 40px;
-                text-align: center;
-                }
-                
-                .staff-grid {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 20px;
-                    justify-items: center;
-                    margin-top: 25px;
-                    margin-left: 20%; /* Added margin-left */
-                    margin-right: 20%; /* Added margin-right */
-                }
-                
-                
-                .staff-member {
-                position: relative;
-                margin-bottom: 20px;
-                }
-                
-                .staff-member img {
-                width: 400px; /* Updated width */
-                height: 400px; /* Updated height */
-                height: auto;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                }
-                
-                .staff-member p {
-                position: absolute;
-                bottom: -20px;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: #f3f3f3;
-                padding: 5px 10px;
-                font-weight: bold;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                }
-                
-                .group-photo {
-                display: block;
-                max-width: 60%;
-                height: auto;
-                margin: 20px auto;
-                margin-top: 70px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                }
-                
-                .additional-photos img {
-                width: 400px;
-                height: 400px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                }
+            justify-content: space-between;
+        }
+        .product-item button {
+            margin: 12px;
+            height: 30px;
+            padding: 0 12px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .product-item button:hover {
+            background-color: tomato;
+        }
+/* -----------------------------cart--------------------*/
+        .cart {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            padding-top: 30px;
+        }
+        .cart h2 {
+            margin-bottom: 20px;
+        }
+        .cart table {
+            width: 100%;
+        }
+        .cart table thead tr th:first-child {
+            text-align: left;
+        }
+        .cart table tr td {
+            margin-bottom: 1px solid white;
+            padding: 12px 0;
+        }
+        .cart table thead tr th:last-child {
+            text-align: right;
+        }
+        .cart table tbody tr td:last-child {
+            text-align: right;
+        
+        }
