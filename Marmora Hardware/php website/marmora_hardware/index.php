@@ -30,12 +30,14 @@ session_start();
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
+            <?php
             if (isset($_SESSION['loggedin'])) {
                 echo '<a href="logout.php" class="login-link"><button class="login-btn">Logout</button></a>';
                 echo '<a href="settings.php" class="login-link"><button class="login-btn">Settings</button></a>';
             } else {
                 echo '<a href="login.php" class="login-link"><button class="login-btn">Login</button></a>';
             }
+            ?>
         </nav>
     </header>
     
