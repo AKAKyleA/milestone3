@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +30,12 @@
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
-            <a href="login.html" class="login-link">
-                <button class="login-btn">Login</button>
-            </a>
+            if (isset($_SESSION['loggedin'])) {
+                echo '<a href="logout.php" class="login-link"><button class="login-btn">Logout</button></a>';
+                echo '<a href="settings.php" class="login-link"><button class="login-btn">Settings</button></a>';
+            } else {
+                echo '<a href="login.php" class="login-link"><button class="login-btn">Login</button></a>';
+            }
         </nav>
     </header>
     
