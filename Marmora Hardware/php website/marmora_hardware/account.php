@@ -193,9 +193,6 @@ nav a:not(.login-link):hover {
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <a href="login.html" class="login-link">
-                <button class="login-btn">Login</button>
-            </a>
         </nav>
     </header>
 
