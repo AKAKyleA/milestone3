@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="icon" href="images/icon.ico" type="image/ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
@@ -24,6 +24,7 @@
             background-color: white;
             padding: 3em 4em;
             border-radius: 10px;
+            margin-bottom: 45px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
@@ -37,7 +38,7 @@
         .signup-form {
             display: flex;
             flex-direction: column;
-            gap: 1.5em;
+            gap: 0.75em;
         }
 
         .signup-form input {
@@ -77,9 +78,9 @@
     </style>
 </head>
 <body>
-    <img src="images/logo-transparent.png" alt="Marmora Hardware Logo" width="400" height="180" style="padding-top: 10px; margin-top: 40px;">
+    <img style="margin-bottom: 25px;" src="images/logo-transparent.png" alt="Marmora Hardware Logo" width="400" height="180" style="padding-top: 10px; margin-top: 40px;">
     <div class="signup-container">
-        <h2>Sign Up</h2>
+        <h2 style="margin-top: -20px;">Sign Up</h2>
         <form class="signup-form" action="register.php" method="post">
             <input type="text" name="first_name" placeholder="First Name" required>
             <input type="text" name="last_name" placeholder="Last Name" required>
@@ -89,7 +90,7 @@
             <input type="submit" value="Sign Up">
         </form>
         <div class="additional-options">
-            <p style="margin-top: 5px;">Already have an account? <a href="login.html" style="text-decoration: underline;">Log in.</a></p>
+            <p style="margin-top: 5px; margin-bottom: -15px;">Already have an account? <a href="login.html" style="text-decoration: underline;">Log in.</a></p>
           </div>
           </div>
           
