@@ -14,25 +14,31 @@ session_start();
     <title>Our History - Marmora Hardware</title>
 </head>
 <body>
-    <header>
+<header>
         <div class="top-bar">
             <p>29 S Shore Rd, Marmora, NJ 08223</p>
             <p>Mon-Sat: 8am-5pm, Sun: 9am-3pm</p>
         </div>
         <nav>
             <div class="logo-container">
-                <img src="images/logo.png" alt="Marmora Hardware Logo" width="250">
+                <img src="images/logo.png" alt="Marmora Hardware Logo" width="250" height="100">
             </div>
             <ul>
-            <li><a href="index.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="services.php">Services</a></li>
                 <li><a href="history.php">History</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
-            <a href="login.html" class="login-link">
-                <button class="login-btn">Login</button>
-            </a>
+            <?php
+    if (isset($_SESSION['loggedin'])) {
+        echo '<a href="logout.php" class="login-link logout-link"><button class="login-btn">Logout</button></a>';
+        echo '<a href="account.php" class="login-link settings-link"><button class="login-btn">Settings</button></a>';
+    } else {
+        echo '<a href="login.html" class="login-link"><button class="login-btn">Login</button></a>';
+    }
+?>
+</nav>
         </nav>
     </header>
 	
