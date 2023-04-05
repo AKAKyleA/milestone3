@@ -83,7 +83,7 @@
             <input type="password" name="current_password" placeholder="Enter Current Password" required>
             <input type="password" name="repeat_current_password" placeholder="Re-Enter Current Password" required>
             <input type="submit" value="Next">
-            <button type="button" class="go-back-btn" onclick="window.location.href='account.html'">Go Back</button</form>
+            <button type="button" class="go-back-btn" onclick="window.location.href='account.php'">Go Back</button</form>
         </div>
     </body>
     </html>

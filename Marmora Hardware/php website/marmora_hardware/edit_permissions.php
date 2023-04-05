@@ -140,7 +140,7 @@
                 </table>
                 <br>
                 <button type="submit">Save Changes</button>
-                <button type="button" onclick="window.location.href='account.html'">Go Back</button>
+                <button type="button" onclick="window.location.href='account.php'">Go Back</button>
             </form>
         </div>
     </body>

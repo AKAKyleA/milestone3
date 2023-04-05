@@ -109,5 +109,5 @@
         <!-- Replace the hardcoded total sales value with PHP code when the server is set up -->
 <!-- <h2>Total Sales: <?php echo '$' . number_format($total_sales, 2); ?></h2> -->
 <br>
-<button onclick="window.location.href='account.html'">Go Back</button>
+<button onclick="window.location.href='account.php'">Go Back</button>
 </div>

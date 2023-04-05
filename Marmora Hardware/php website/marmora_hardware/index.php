@@ -14,7 +14,7 @@ session_start();
     <title>Marmora Hardware</title>
 </head>
 <body>
-    <header>
+<header>
         <div class="top-bar">
             <p>29 S Shore Rd, Marmora, NJ 08223</p>
             <p>Mon-Sat: 8am-5pm, Sun: 9am-3pm</p>
@@ -32,7 +32,6 @@ session_start();
             </ul>
             <?php
     if (isset($_SESSION['loggedin'])) {
-        echo '<a href="logout.php" class="login-link logout-link"><button class="login-btn">Logout</button></a>';
         echo '<a href="account.php" class="login-link settings-link"><button class="login-btn">Settings</button></a>';
     } else {
         echo '<a href="login.html" class="login-link"><button class="login-btn">Login</button></a>';

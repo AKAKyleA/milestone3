@@ -22,11 +22,6 @@ header {
     position: relative;
 }
 
-.logout-link {
-    margin-right: 10px; /* Adjust this value to your desired spacing between Logout and Settings buttons */
-}
-
-
 .top-bar {
     display: flex;
     justify-content: space-between;
@@ -74,25 +69,60 @@ nav a:not(.login-link):hover {
     color: #ffffff;
 }
 
-.login-link {
-    display: inline-block;
-    margin-right: 240px;
+.login-link .button-group {
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+.account-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.account-grid-single {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2em;
+    padding-bottom: 2em;
+}
+
+.account-grid-double {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    padding-bottom: 2em;
+}
+
+.account-grid-triple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding-bottom: 2em;
+}
+
+
+.settings-link {
+    margin-bottom: 5px; /* Add this line */
 }
 
 .login-btn {
-    background-color: white;
-    color: #333;
-    border: 2px solid #333;
-    padding: 0.5em 1em;
-    font-size: 18px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    padding: 8px 16px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .login-btn:hover {
-    background-color: #007bff;
-    color: #ffffff;
-    border-color: #007bff;
+    background-color: #2980b9;
 }
 
 

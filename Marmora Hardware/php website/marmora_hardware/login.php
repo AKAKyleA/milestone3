@@ -119,6 +119,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
                 $_SESSION['lastname'] = $row['lastname'];
 
+                $_SESSION['id'] = $row['id'];
+
                 $_SESSION['loggedin'] = true;
 
                 header("Location: index.php");

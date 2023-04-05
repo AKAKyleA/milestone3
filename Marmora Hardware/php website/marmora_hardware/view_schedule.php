@@ -131,7 +131,7 @@
             </tr>
         </table>
         <br>
-        <button onclick="window.location.href='account.html'">Go Back</button>
+        <button onclick="window.location.href='account.php'">Go Back</button>
     </div>
 </body>
 </html>

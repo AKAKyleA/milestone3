@@ -189,7 +189,7 @@ input[type=submit]:hover, button:hover {
         </table>
         <br>
         <input type="submit" value="Submit">
-        <button type="button" onclick="window.location.href='account.html'">Go Back</button>
+        <button type="button" onclick="window.location.href='account.php'">Go Back</button>
     </form>
 </div>
 </body>
