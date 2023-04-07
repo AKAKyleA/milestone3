@@ -34,7 +34,7 @@ session_start();
     if (isset($_SESSION['loggedin'])) {
         echo '<a href="account.php" class="login-link settings-link"><button class="login-btn">Settings</button></a>';
     } else {
-        echo '<a href="login.html" class="login-link"><button class="login-btn">Login</button></a>';
+        echo '<a href="login.php" class="login-link"><button class="login-btn">Login</button></a>';
     }
 ?>
 </nav>
@@ -67,8 +67,6 @@ session_start();
 	
 	
 	
-	
-	
 	<section class="featured-items">
     <div class="item-container">
         <img class="item" src="images/featured1.png" alt="Featured Item 1">
@@ -80,52 +78,72 @@ session_start();
 	</section>
 
 	
-    <section class="lawn-garden">
-    <div class="image-container">
-        <img src="images/lawngarden.JPG" alt="Lawn and Garden Care" width="600" height="400">
+    <section class="lawn-garden" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: 0 auto;">
+    <div class="image-container" style="width: 50%; margin-right: 20px;">
+    <img src="images/lawngarden.JPG" alt="Lawn and Garden Care" style="width: 100%; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); border-radius: 5px;">
     </div>
-    <div class="text-container">
-        <h2 style="font-size: 2.5rem;">Lawn and Garden Care</h2>
-        <p style="margin-top: -20px;">At Marmora Hardware, you'll find everything you need to maintain and enhance your lawn and garden. Our extensive selection includes tools, fertilizers, pest control products, and much more. Our knowledgeable staff is always on hand to help you choose the best products for your specific needs. Visit us today to make your lawn and garden flourish!</p>
+    <div class="text-container" style="width: 40%; max-width: 500px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Lawn and Garden Care</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 20px;">We offer a wide selection of products to help you maintain and enhance your lawn and garden. From tools and fertilizers to pest control products, we have everything you need to make your outdoor space flourish. Our knowledgeable staff is always available to assist you in choosing the best products for your specific needs. Visit us today and let us help you create the lawn and garden of your dreams.</p>
+        <a href="#" style="display: inline-block; padding: 10px 20px; background-color: #008080; color: white; font-size: 1.2rem; text-decoration: none; border-radius: 5px;">Shop Now</a>
+    </div>
+</section>
+
+<section class="plumbing-section" style="margin-bottom: 100px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: 0 auto;">
+    <div class="text-container" style="width: 40%; max-width: 500px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Plumbing Services</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 20px;">At Marmora Hardware, we offer a full range of plumbing products and services to meet all your needs. From repairing leaky faucets to installing new plumbing systems, our experienced staff is here to help you every step of the way. We carry a wide selection of high-quality plumbing fixtures and accessories to make your plumbing projects a success. Come in today and let us help you with all your plumbing needs!</p>
+        <a href="#" style="display: inline-block; padding: 10px 20px; background-color: #008080; color: white; font-size: 1.2rem; text-decoration: none; border-radius: 5px;">Learn More</a>
+    </div>
+    <div class="image-container" style="width: 50%; margin-left: 20px;">
+        <img src="images/plumbing.jpg" alt="Plumbing Services Image" style="width: 100%; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); border-radius: 5px;">
     </div>
 </section>
 
-
-
-<section class="lumber-yard">
-    <div class="text-container">
-        <h2 style="font-size: 2.5rem;">Lumber Yard</h2>
-        <p style="margin-top: -20px;">Discover our fully stocked lumber yard at Marmora Hardware, where we cater to all your woodworking needs. From construction projects to custom furniture, our wide selection of high-quality lumber will provide the materials you need. Our knowledgeable staff is ready to assist you in finding the perfect lumber for your project. Visit Marmora Hardware today and let us help you bring your vision to life.</p>
+<section class="lumber-yard" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: 0 auto;">
+    <div class="image-container" style="width: 50%; margin-right: 20px;">
+        <img src="images/lumber.jpg" alt="Lumber Yard Image" style="width: 100%; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); border-radius: 5px;">
     </div>
-    <div class="image-container">
-        <img src="images/lumber.jpg" alt="Lumber Yard Image">
+    <div class="text-container" style="width: 40%; max-width: 500px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Lumber Yard</h2>
+        <p style="font-size: 1rem; line-height: 1.5; margin-bottom: 20px;">Discover our fully stocked lumber yard at Marmora Hardware, where we cater to all your woodworking needs. From construction projects to custom furniture, our wide selection of high-quality lumber will provide the materials you need. Our knowledgeable staff is ready to assist you in finding the perfect lumber for your project. Visit Marmora Hardware today and let us help you bring your vision to life.</p>
+        <a href="#" style="display: inline-block; padding: 10px 20px; background-color: #008080; color: white; font-size: 1.2rem; text-decoration: none; border-radius: 5px;">Shop Now</a>
     </div>
 </section>
+
 
 
 
 <section class="services">
-    <div class="service-item">
-        <img src="images/propane.jpg" alt="Propane Exchanges">
-        <h3>Propane Exchanges</h3>
-        <p>Looking to replace your empty propane tank? Our propane exchange service ensures you always have a fresh tank on hand for your grilling needs. Bring your empty tank and exchange it for a full one in no time.</p>
-    </div>
-    <div class="service-item">
-        <img src="images/keycutting.jpg" alt="Key Cutting">
-        <h3>Key Cutting</h3>
-        <p>Never worry about losing your keys again. Our key cutting service provides fast and precise duplication of various types of keys. Trust Marmora Hardware to provide you with the best key cutting solutions.</p>
-    </div>
-    <div class="service-item">
-        <img src="images/screenrepair.jpg" alt="Screen Repairs">
-        <h3>Screen Repairs</h3>
-        <p>Don't let a damaged screen ruin your day. Our screen repair service fixes various types of screens for windows and doors, ensuring your home stays protected and bug-free. Let us help you keep your screens in top shape.</p>
-    </div>
-    <div class="service-item">
-        <img src="images/beachchairs.jpg" alt="Beach Chairs">
-        <h3>Beach Chairs</h3>
-        <p>Enjoy the sun, sand, and surf with our selection of beach chairs. Marmora Hardware offers a variety of comfortable and durable beach chairs to suit your needs. Make your beach day perfect with the right chair from our store.</p>
-    </div>
+  <div class="service-item">
+    <img src="images/propane.jpg" alt="Propane Exchanges">
+    <h3>Propane Exchanges</h3>
+    <p>Looking to replace your empty propane tank? Our propane exchange service ensures you always have a fresh tank on hand for your grilling needs. Bring your empty tank and exchange it for a full one in no time.</p>
+    <a href="#" class="service-link">Learn More</a>
+  </div>
+  <div class="service-item">
+    <img src="images/keycutting.jpg" alt="Key Cutting">
+    <h3>Key Cutting</h3>
+    <p>Never worry about losing your keys again. Our key cutting service provides fast and precise duplication of various types of keys. Trust Marmora Hardware to provide you with the best key cutting solutions.</p>
+    <a href="#" class="service-link">Learn More</a>
+  </div>
+  <div class="service-item">
+    <img src="images/screenrepair.jpg" alt="Screen Repairs">
+    <h3>Screen Repairs</h3>
+    <p>Don't let a damaged screen ruin your day. Our screen repair service fixes various types of screens for windows and doors, ensuring your home stays protected and bug-free. Let us help you keep your screens in top shape.</p>
+    <a href="#" class="service-link">Learn More</a>
+  </div>
+  <div class="service-item">
+    <img src="images/beachchairs.jpg" alt="Beach Chairs">
+    <h3>Beach Chairs</h3>
+    <p>Enjoy the sun, sand, and surf with our selection of beach chairs. Marmora Hardware offers a variety of comfortable and durable beach chairs to suit your needs. Make your beach day perfect with the right chair from our store.</p>
+    <a href="#" class="service-link">Learn More</a>
+  </div>
 </section>
+
+
+
+
 
 	
 <footer>

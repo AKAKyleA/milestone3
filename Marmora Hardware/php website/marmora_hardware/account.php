@@ -43,6 +43,7 @@ nav ul {
     justify-content: space-around;
     width: 35%;
     margin-left: -1%;
+    margin-right: 365px;
 }
 
 nav li {
@@ -68,19 +69,22 @@ nav a:not(.login-link):hover {
 }
 
 .login-btn {
-    background-color: white;
-    color: #333;
-    border: 2px solid #333;
-    padding: 0.5em 1em;
-    font-size: 18px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Increase font size */
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    padding: 10px 20px; /* Increase padding for a larger button */
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-right: 20px; /* Add margin to move the button slightly to the left */
 }
 
 .login-btn:hover {
-    background-color: #007bff;
-    color: #ffffff;
-    border-color: #007bff;
+    background-color: #2980b9;
 }
 
     .main-content {
@@ -94,12 +98,16 @@ nav a:not(.login-link):hover {
         margin-bottom: 2em;
     }
 
-    .account-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2em;
-        padding-bottom: 2em;
-    }
+    .account-wrapper {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .account-grid {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 2em;
+        }
 
     .account-container {
         background-color: white;
@@ -193,33 +201,14 @@ nav a:not(.login-link):hover {
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
-            <?php
-    if (isset($_SESSION['loggedin'])) {
-        echo '<a href="account.php" class="login-link settings-link"><button class="login-btn">Settings</button></a>';
-    } else {
-        echo '<a href="login.html" class="login-link"><button class="login-btn">Login</button></a>';
-    }
-?>
+
 </nav>
         </nav>
     </header>
 
     <div class="main-content">
-    
     <div class="account-wrapper">
-        <div class="
-        <?php
-        if ($_SESSION["isAdmin"] == 1) {
-            echo 'account-grid-triple';
-        } elseif ($_SESSION["isManager"] == 1) {
-            echo 'account-grid-double';
-        } elseif ($_SESSION["isEmployee"] == 1) {
-            echo 'account-grid-double';
-        } else {
-            echo 'account-grid-single';
-        }
-        ?>">
-
+        <div class="account-grid">
             <!-- Account Information -->
             <div class="account-container">
                 <h2>Account Information</h2>
@@ -241,7 +230,7 @@ nav a:not(.login-link):hover {
                 <div class="account-container">
                     <h2>Employee Information</h2>
                     <div class="account-info">
-                    <p>Employee ID: <span class="value">#<?php echo $_SESSION['id']; ?></span></p>
+                        <p>Employee ID: <span class="value">#<?php echo $_SESSION['id']; ?></span></p>
                         <button onclick="window.location.href='view_schedule.php'">View Schedule</button>
                     </div>
                 </div>
@@ -272,7 +261,7 @@ nav a:not(.login-link):hover {
         </div> <!-- account-grid -->
     </div> <!-- account-wrapper -->
 
-<button style="margin-bottom: 25px;" class="logout-btn" onclick="window.location.href='logout.php'">Log Out</button>
+    <button style="margin-bottom: 25px;" class="logout-btn" onclick="window.location.href='logout.php'">Log Out</button>
 </div>
 
 <footer>

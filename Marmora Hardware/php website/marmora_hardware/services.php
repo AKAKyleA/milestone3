@@ -34,7 +34,7 @@ session_start();
     if (isset($_SESSION['loggedin'])) {
         echo '<a href="account.php" class="login-link settings-link"><button class="login-btn">Settings</button></a>';
     } else {
-        echo '<a href="login.html" class="login-link"><button class="login-btn">Login</button></a>';
+        echo '<a href="login.php" class="login-link"><button class="login-btn">Login</button></a>';
     }
 ?>
 </nav>
