@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header('Location: login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,23 +76,27 @@
 <body>
     <div class="container">
         <h1>Employee Schedule</h1>
-        <p>Employee Name: John Doe</p>
-        <p>Employee ID: 1</p>
+        <p>Employee Name: <?php echo $_SESSION['firstname']; ?></p>
+        <p>Employee ID: <?php echo $_SESSION['id']; ?></p>
 
-        <!-- Uncomment and modify the PHP code to fetch the schedule from the database when the server is set up -->
-        <!-- <?php
+        <?php
             // Connect to the database
-            // $connection = new mysqli('localhost', 'username', 'password', 'database_name');
+            $connection = new mysqli('localhost', 'root', '', 'hardstore');
 
             // Check the connection
-            // if ($connection->connect_error) {
-            //     die('Connection failed: ' . $connection->connect_error);
-            // }
+            if ($connection->connect_error) {
+                die('Connection failed: ' . $connection->connect_error);
+            }
 
             // Fetch the employee's schedule
-            // $sql = 'SELECT day, start_time, end_time FROM schedule WHERE employee_id = 1';
-            // $result = $connection->query($sql);
-        ?> -->
+            $user_id = $_SESSION['id'];
+            
+            $sql = "SELECT day_of_week, start_time, end_time, is_day_off FROM schedules WHERE user_id = ?";
+            $stmt = $connection->prepare($sql);
+            $stmt->bind_param('i', $user_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        ?>
 
         <table>
             <tr>
@@ -93,42 +104,13 @@
                 <th>Start Time</th>
                 <th>End Time</th>
             </tr>
-            <!-- Example schedule data, replace with PHP code when the server is set up -->
-            <tr>
-                <td>Sunday</td>
-                <td>Off</td>
-                <td>Off</td>
-            </tr>
-            <tr>
-                <td>Monday</td>
-                <td>09:00</td>
-                <td>17:00</td>
-            </tr>
-            <tr>
-                <td>Tuesday</td>
-                <td>09:00</td>
-                <td>17:00</td>
-            </tr>
-            <tr>
-                <td>Wednesday</td>
-                <td>09:00</td>
-                <td>17:00</td>
-            </tr>
-            <tr>
-                <td>Thursday</td>
-                <td>09:00</td>
-                <td>17:00</td>
-            </tr>
-            <tr>
-                <td>Friday</td>
-                <td>09:00</td>
-                <td>17:00</td>
-            </tr>
-            <tr>
-                <td>Saturday</td>
-                <td>Off</td>
-                <td>Off</td>
-            </tr>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo $row['day_of_week']; ?></td>
+                    <td><?php echo $row['is_day_off'] ? 'Off' : date('h:i A', strtotime($row['start_time'])); ?></td>
+                    <td><?php echo $row['is_day_off'] ? 'Off' : date('h:i A', strtotime($row['end_time'])); ?></td>
+                    </tr>
+            <?php endwhile; ?>
         </table>
         <br>
         <button onclick="window.location.href='account.php'">Go Back</button>
