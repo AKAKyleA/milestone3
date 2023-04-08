@@ -52,7 +52,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 $_SESSION['isAdmin'] = $row['isAdmin'];
                 $_SESSION['isManager'] = $row['isManager'];
                 $_SESSION['isEmployee'] = $row['isEmployee'];
-                $_SESSION['id'] = $row['ID'];
+                
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['firstname'] = $row['firstname'];
                 $_SESSION['lastname'] = $row['lastname'];
