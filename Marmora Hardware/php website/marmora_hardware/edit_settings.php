@@ -85,7 +85,7 @@
             <input type="password" name="password" placeholder="New Password">
             <input type="password" name="confirm_password" placeholder="Confirm New Password">
             <input type="submit" value="Update Settings">
-            <button type="button" class="go-back-btn" onclick="window.location.href='account.html'">Go Back</button>
+            <button type="button" class="go-back-btn" onclick="window.location.href='account.php'">Go Back</button>
             </form>
             </div>
             

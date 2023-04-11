@@ -1,3 +1,19 @@
+<?php
+// Connect to the database
+$connection = new mysqli('localhost', 'root', '', 'hardstore');
+
+// Check the connection
+if ($connection->connect_error) {
+    die('Connection failed: ' . $connection->connect_error);
+}
+
+// Fetch the sales data
+$sql = 'SELECT date, total FROM sales ORDER BY date ASC';
+$result = $connection->query($sql);
+
+$total_sales = 0;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,48 +82,29 @@
     <div class="container">
         <h1>View Sales</h1>
 
-        <!-- Uncomment and modify the PHP code to fetch the sales data from the database when the server is set up -->
-        <!-- <?php
-            // Connect to the database
-            // $connection = new mysqli('localhost', 'username', 'password', 'database_name');
-
-            // Check the connection
-            // if ($connection->connect_error) {
-            //     die('Connection failed: ' . $connection->connect_error);
-            // }
-
-            // Fetch the sales data
-            // $sql = 'SELECT date, amount FROM sales ORDER BY date ASC';
-            // $result = $connection->query($sql);
-
-            // $total_sales = 0;
-            // while ($row = $result->fetch_assoc()) {
-            //     $total_sales += $row['amount'];
-            // }
-        ?> -->
-
         <table>
             <tr>
                 <th>Date</th>
                 <th>Amount</th>
             </tr>
-            <!-- Example sales data, replace with PHP code when the server is set up -->
-            <tr>
-                <td>2023-03-27</td>
-                <td>$150.00</td>
-            </tr>
-            <tr>
-                <td>2023-03-28</td>
-                <td>$200.00</td>
-            </tr>
-            <tr>
-                <td>2023-03-29</td>
-                <td>$175.00</td>
-            </tr>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo $row['date']; ?></td>
+                    <td>$<?php echo number_format($row['total'], 2); ?></td>
+                </tr>
+                <?php $total_sales += $row['total']; ?>
+            <?php endwhile; ?>
         </table>
-        <h2>Total Sales: $525.00</h2>
-        <!-- Replace the hardcoded total sales value with PHP code when the server is set up -->
-<!-- <h2>Total Sales: <?php echo '$' . number_format($total_sales, 2); ?></h2> -->
-<br>
-<button onclick="window.location.href='account.php'">Go Back</button>
-</div>
+
+        <h2>Total Sales: $<?php echo number_format($total_sales, 2); ?></h2>
+
+        <br>
+        <button onclick="window.location.href='account.php'">Go Back</button>
+    </div>
+</body>
+</html>
+
+<?php
+// Close the database connection
+$connection->close();
+?>

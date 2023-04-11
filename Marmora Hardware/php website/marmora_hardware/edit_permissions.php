@@ -1,3 +1,17 @@
+<?php
+// Connect to the database
+$connection = new mysqli('localhost', 'root', '', 'hardstore');
+
+// Check the connection
+if ($connection->connect_error) {
+    die('Connection failed: ' . $connection->connect_error);
+}
+
+// Fetch the user list
+$sql = 'SELECT id, email, isEmployee, isManager, isAdmin FROM users';
+$result = $connection->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,75 +88,49 @@
     <div class="container">
         <h1>Edit Account Levels</h1>
 
-        <!-- Uncomment and modify the PHP code to fetch the user list from the database when the server is set up -->
-        <!-- <?php
-            // Connect to the database
-            // $connection = new mysqli('localhost', 'username', 'password', 'database_name');
-
-            // Check the connection
-            // if ($connection->connect_error) {
-            //     die('Connection failed: ' . $connection->connect_error);
-            // }
-
-            // Fetch the user list
-            // $sql = 'SELECT user_id, username, account_level FROM users';
-            // $result = $connection->query($sql);
-        ?> -->
-
         <form action="save_changes.php" method="post">
             <table>
                 <tr>
                     <th>User ID</th>
-                    <th>Username</th>
+                    <th>Email</th>
                     <th>Current Account Level</th>
                     <th>New Account Level</th>
                 </tr>
-                <!-- Example user data, replace with PHP code when the server is set up -->
-                <tr>
-                    <td>1</td>
-                    <td>user1</td>
-                    <td>Customer</td>
-                    <td>
-                        <select name="account_level_1">
-                            <option value="customer">Customer</option>
-                            <option value="employee">Employee</option>
-                            <option value="manager">Manager</option>
-                            <option value="admin">Admin</option>
-                        </select>
-                    </td>
-                    <tr>
-                        <td>2</td>
-                        <td>user2</td>
-                        <td>Employee</td>
-                        <td>
-                            <select name="account_level_2">
-                                <option value="customer">Customer</option>
-                                <option value="employee">Employee</option>
-                                <option value="manager">Manager</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>user3</td>
-                        <td>Manager</td>
-                        <td>
-                            <select name="account_level_3">
-                                <option value="customer">Customer</option>
-                                <option value="employee">Employee</option>
-                                <option value="manager">Manager</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <!-- Add more rows for users, fetched from the database -->
-                </table>
-                <br>
-                <button type="submit">Save Changes</button>
-                <button type="button" onclick="window.location.href='account.php'">Go Back</button>
-            </form>
-        </div>
-    </body>
-    </html>
-    
+                <?php
+                // Loop through each row of the result set and output the user data
+                while ($row = $result->fetch_assoc()) {
+                    // Determine the current account level based on the values of isEmployee, isManager, and isAdmin
+                    if ($row['isEmployee'] == 1 && $row['isManager'] == 0 && $row['isAdmin'] == 0) {
+                        $current_level = 'Employee';
+                    } elseif ($row['isEmployee'] == 0 && $row['isManager'] == 1 && $row['isAdmin'] == 0) {
+                        $current_level = 'Manager';
+                    } elseif ($row['isEmployee'] == 0 && $row['isManager'] == 0 && $row['isAdmin'] == 1) {
+                        $current_level = 'Admin';
+                    } else {
+                        $current_level = 'Customer';
+                    }
+
+                    // Output the row with the user data and the account level dropdown menu
+                    echo '<tr>';
+                    echo '<td>' . $row['id'] . '</td>';
+                    echo '<td>' . $row['email'] . '</td>';
+                    echo '<td>' . $current_level . '</td>';
+                    echo '<td>';
+                    echo '<select name="account_level_' . $row['id'] . '">';
+                    echo '<option value="customer">Customer</option>';
+                    echo '<option value="employee">Employee</option>';
+                    echo '<option value="manager">Manager</option>';
+                    echo '<option value="admin">Admin</option>';
+                    echo '</select>';
+                    echo '</td>';
+                    echo '</tr>';
+                }
+                ?>
+            </table>
+            <br>
+            <button type="submit">Save Changes</button>
+            <button type="button" onclick="window.location.href='account.php'">Go Back</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -34,7 +34,7 @@ session_start();
     if (isset($_SESSION['loggedin'])) {
         echo '<a href="account.php" class="login-link settings-link"><button class="login-btn">Settings</button></a>';
     } else {
-        echo '<a href="login.html" class="login-link"><button class="login-btn">Login</button></a>';
+        echo '<a href="login.php" class="login-link"><button class="login-btn">Login</button></a>';
     }
 ?>
 </nav>
@@ -48,11 +48,9 @@ session_start();
             </div>
             <div class="history-content">
                 <div class="history-description">
-                    <p>Marmora Hardware, a local hardware store located in Marmora, New Jersey, has been providing quality products and exceptional customer service for over 70 years. It all began as Corsons hardware, a small family-owned business that started in the early 1950s. The hardware store was known for its vast selection of hardware products and its reputation for providing personalized service to the local community.</p>
+                <p>Marmora Hardware, a local hardware store located in Marmora, New Jersey, has been providing quality products and exceptional customer service for over 65 years. The store's history began as Steelman's Hardware and later became Dietrich's in the 1950s, under the ownership of Paul Dietrich. In the early 1990s, the hardware store was taken over by Doug Corson and became known as Corson's Hardware. The store continued to be known for its vast selection of hardware products and its reputation for providing personalized service to the local community.</p>
 <br>
-<p>Over the years, the hardware store continued to thrive, gaining loyal customers who valued the store's commitment to quality and personalized service. The store remained a family-owned business, and the Corsons family worked tirelessly to maintain their reputation as a trusted and reliable source for all hardware needs.</p>
-<br>
-<p>In 2010, Christopher Antolini took over ownership of the hardware store, and it was then renamed Marmora Hardware. Antolini, a local businessman, saw the potential of the hardware store and was committed to preserving its legacy. He believed in providing excellent customer service and ensuring that the store offered a vast selection of quality products at affordable prices.</p>
+<p>In April 1995, Christopher Antolini purchased the store from Doug Corson and renamed it Marmora Hardware, a name he came up with himself. Antolini, a local businessman, saw the potential of the hardware store and was committed to preserving its legacy. He believed in providing excellent customer service and ensuring that the store offered a vast selection of quality products at affordable prices.</p>
 <br>
 <p>Mike Ricchi manages the hardware store, and together with Antolini, they have continued to build on the store's reputation for providing excellent customer service and offering quality products. They have expanded the store's selection of products to include everything from tools and hardware to lawn and garden supplies, paint, and home improvement items.</p>
 <br>
@@ -60,22 +58,21 @@ session_start();
 
                 </div>
                 <div class="history-images" style="margin-bottom: 5px;">
-                    <div class="image-container" style="width: 400px; height: 400px; display: inline-block; position: relative; overflow: hidden; border-radius: 10px; margin-right: 20px;">
-                        <img src="images/old1.jpg" alt="Marmora Hardware History" style="width: 100%; height: 100%; object-fit: cover; position: absolute;">
-                    </div>
-                    <div class="image-container" style="width: 400px; height: 400px; display: inline-block; position: relative; overflow: hidden; border-radius: 10px;">
-                        <img src="images/history2.jpg" alt="Marmora Hardware History" style="width: 100%; height: 100%; object-fit: cover; position: absolute;">
-                    </div>
-                </div>
-            </div>
-            <div class="history-images" style="margin-bottom: 50px;">
-                <div class="image-container" style="width: 400px; height: 400px; display: inline-block; position: relative; overflow: hidden; border-radius: 10px; margin-right: 20px;">
-                    <img src="images/history1.jpg" alt="Marmora Hardware History" style="width: 100%; height: 100%; object-fit: cover; position: absolute;">
-                </div>
-                <div class="image-container" style="width: 400px; height: 400px; display: inline-block; position: relative; overflow: hidden; border-radius: 10px;">
-                    <img src="images/old2.jpg" alt="Marmora Hardware History" style="width: 100%; height: 100%; object-fit: cover; position: absolute;">
-                </div>
-                
+    <div class="image-container" style="width: 400px; height: 400px; display: inline-block; position: relative; overflow: hidden; margin-right: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <img src="images/old1.jpg" alt="Marmora Hardware History" style="width: 100%; height: 100%; object-fit: cover; position: absolute;" onmouseover="this.parentElement.style.transform='scale(1.05)'; this.parentElement.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.4)';" onmouseout="this.parentElement.style.transform=''; this.parentElement.style.boxShadow='0 0 10px rgba(0, 0, 0, 0.3)';">
+    </div>
+    <div class="image-container" style="width: 400px; height: 400px; display: inline-block; position: relative; overflow: hidden; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <img src="images/history2.jpg" alt="Marmora Hardware History" style="width: 100%; height: 100%; object-fit: cover; position: absolute;" onmouseover="this.parentElement.style.transform='scale(1.05)'; this.parentElement.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.4)';" onmouseout="this.parentElement.style.transform=''; this.parentElement.style.boxShadow='0 0 10px rgba(0, 0, 0, 0.3)';">
+    </div>
+</div>
+<div class="history-images" style="margin-bottom: 50px;">
+    <div class="image-container" style="width: 400px; height: 400px; display: inline-block; position: relative; overflow: hidden; margin-right: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <img src="images/history1.jpg" alt="Marmora Hardware History" style="width: 100%; height: 100%; object-fit: cover; position: absolute;" onmouseover="this.parentElement.style.transform='scale(1.05)'; this.parentElement.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.4)';" onmouseout="this.parentElement.style.transform=''; this.parentElement.style.boxShadow='0 0 10px rgba(0, 0, 0, 0.3)';">
+    </div>
+    <div class="image-container" style="width: 400px; height: 400px; display: inline-block; position: relative; overflow: hidden; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <img src="images/old2.jpg" alt="Marmora Hardware History" style="width: 100%; height: 100%; object-fit: cover; position: absolute;" onmouseover="this.parentElement.style.transform='scale(1.05)'; this.parentElement.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.4)';" onmouseout="this.parentElement.style.transform=''; this.parentElement.style.boxShadow='0 0 10px rgba(0, 0, 0, 0.3)';">
+    </div>
+</div> 
             </div>
         </div>
         </section>
