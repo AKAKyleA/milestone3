@@ -100,7 +100,7 @@
             color: #333;
         }
         .receipt-container {
-    width: 300px; /* Adjust this value to change the width of the receipt */
+    width: 300px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -126,11 +126,13 @@
     margin: 0;
     font-size: 14px;
 }
+
 .receipt-container { width: 300px; margin: 0 auto; font-size: 14px; } .barcode-image { display: block; margin: 0 auto; width: 100%; height: auto; max-height: 100px; }
 
     </style>
 </head>
 <body>
+
 <div class="container">
     <div class="checkout-page">
         <h1>Checkout</h1>
@@ -194,7 +196,7 @@ const itemSubtotal = item.price * item.quantity;
         cartItemsContainer.appendChild(cartItem);
 });
 
-const tax = totalPrice * 0.0625; // assuming 6% tax rate
+const tax = totalPrice * 0.0625;
 const grandTotal = totalPrice + tax;
 
 taxDisplay.textContent = `$${tax.toFixed(2)}`;
@@ -209,14 +211,20 @@ function generateReceipt() {
 
     console.log('Cart:', cart);
 
-    // Convert the cart data to a string, including the item data-ids and the Enter key (carriage return)
+    let totalPrice = 0;
+    cart.forEach(item => {
+        item.subtotal = item.price * item.quantity;
+        totalPrice += item.subtotal;
+    });
+
+    const tax = totalPrice * 0.065;
+    const grandTotal = totalPrice + tax;
+
     const cartDataString = cart.map(item => `${item.id}-${item.quantity}${String.fromCharCode(13)}`).join('');
 
-    // Create a canvas element for the barcode
     const canvas = document.createElement("canvas");
     document.body.appendChild(canvas);
 
-    // Generate the barcode with the cart data string
     JsBarcode(canvas, cartDataString, {
         format: "CODE128",
         displayValue: false,
@@ -224,39 +232,40 @@ function generateReceipt() {
         height: 80,
         fontSize: 16,
         margin: 10,
-        background: "white", // Change the background color to match your receipt background
+        background: "white",
         lineColor: "black"
     });
 
-    // Convert the canvas to an image
     const barcodeImage = new Image();
     barcodeImage.src = canvas.toDataURL("image/png");
     barcodeImage.classList.add("barcode-image");
 
-    // Remove the canvas element
     document.body.removeChild(canvas);
 
-    // Display the barcode image
     const receiptWindow = window.open("", "_blank");
     receiptWindow.document.write("<html><head><title>Receipt</title><style>");
     receiptWindow.document.write(document.querySelector("style").textContent);
     receiptWindow.document.write(".receipt-container { width: 300px; margin: 0 auto; font-size: 14px; } .barcode-image { display: block; margin: 0 auto; width: 100%; height: auto; max-height: 100px; }");
     receiptWindow.document.write("</style></head><body>");
     receiptWindow.document.write("<div class='receipt-container'>");
-    receiptWindow.document.write("<h1>Receipt</h1>");
+    receiptWindow.document.write("<h1 style='text-align: center'>Online Receipt</h1>");
     receiptWindow.document.write("<div class='item-list'>");
     cart.forEach(item => {
-        receiptWindow.document.write(`<p>${item.quantity}x ${item.name}</p>`);
-    });
+    receiptWindow.document.write(`<p><span>${item.name} - x${item.quantity}</span><strong style="float: right;">$${item.subtotal.toFixed(2)}</strong></p>`);
+});
     receiptWindow.document.write("</div>");
-    receiptWindow.document.write("<p>Please have an associate scan the barcode below at the front register to finalize payment.</p>");
+    receiptWindow.document.write(`<p style="margin-top: 40px; margin-bottom: 5px;">Subtotal: <span style="float: right;">$${totalPrice.toFixed(2)}</span></p>`);
+receiptWindow.document.write(`<p style="margin-top: 5px;">Tax: <span style="float: right;">$${tax.toFixed(2)}</span></p>`);
+receiptWindow.document.write(`<strong><p style="margin-top: 5px; margin-bottom: 10px;">Total: <span style="float: right; font-weight: bold;">$${grandTotal.toFixed(2)}</span></p></strong>`);
+receiptWindow.document.write("<p style='text-align: center;'>Please have an associate scan the barcode below at the front register to finalize payment.</p>");
     receiptWindow.document.write(barcodeImage.outerHTML);
     receiptWindow.document.write("</div>");
     receiptWindow.document.write("</body></html>");
     receiptWindow.document.close();
+    setTimeout(function() {
+    receiptWindow.print();
+  }, 250);
 }
-
-
             const viewReceiptBtn = document.querySelector(".btn-view-receipt");
             viewReceiptBtn.addEventListener("click", generateReceipt);
 </script>

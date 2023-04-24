@@ -69,14 +69,14 @@ session_start();
         <div class="product" data-id="G1">
             <img src="images/product-images/black_mulch.png" alt="mulch">
             <h3>Black Mulch</h3>
-            <p>$6.49</p>
+            <p>$5.99</p>
             <button class="add-to-cart">Add to Cart</button>
         </div>
         
         <div class="product" data-id="G2">
             <img src="images/product-images/brown_mulch.png" alt="mulch">
             <h3>Brown Mulch</h3>
-            <p>$6.49</p>
+            <p>$5.99</p>
             <button class="add-to-cart">Add to Cart</button>
         </div>
 
@@ -594,16 +594,6 @@ session_start();
 
     </section>
 
-    <div class="product-section" id="beach">
-    <h2>Beach Chairs</h2>
-    <div class="product" data-id="B1">
-        <img src="images/product-images/beachchair.png" alt="Beach Chair 1">
-        <h3>Beach Chair 1</h3>
-        <p>$0.00</p>
-        <button disabled>Call For Availability</button>
-    </div>
-</div>
-
 
     <footer>
         <div class="footer-top">
@@ -652,18 +642,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const dataId = product.getAttribute("data-id");
     addItemToCart(name, price, dataId);
 
-    // Add the "Added to cart!" text below the button
     const addedToCartMessage = document.createElement("div");
     addedToCartMessage.classList.add("added-to-cart-message");
     addedToCartMessage.textContent = "Added to cart!";
     product.appendChild(addedToCartMessage);
 
-    // Fade in the message
     setTimeout(() => {
       addedToCartMessage.classList.add("visible");
     }, 50);
 
-    // Fade out the message and remove it from the DOM after 3 seconds
     setTimeout(() => {
       addedToCartMessage.classList.remove("visible");
       setTimeout(() => {
@@ -676,11 +663,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function addItemToCart(name, price, id) {
-  let item = cart.find((item) => item.name === name && item.id === id); // check for the ID as well
+  let item = cart.find((item) => item.name === name && item.id === id);
   if (item) {
     item.quantity += 1;
   } else {
-    cart.push({ name, price, quantity: 1, id }); // add the ID to the item object
+    cart.push({ name, price, quantity: 1, id });
   }
   displayCart();
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -757,10 +744,6 @@ function decrementQuantity(id) {
   cartContent.appendChild(checkoutBtn);
 }
 
-
-
-
-  // Make functions globally accessible
   window.decrementQuantity = decrementQuantity;
   window.incrementQuantity = incrementQuantity;
 });

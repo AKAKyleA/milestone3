@@ -49,7 +49,6 @@ document.addEventListener("click", function (event) {
     console.log('Cart:', cart);
 });
 
-// Call updateCartCounter() after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
     updateCartCounter();
 });

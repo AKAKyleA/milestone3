@@ -75,14 +75,13 @@ nav a:not(.login-link):hover {
 }
 
 .login-link {
-    position: relative; /* Change from .button-group to .login-link */
+    position: relative;
 }
 
 .button-group {
     position: absolute;
     top: 100%;
     right: 0;
-    /* Add the following lines to limit the clickable area */
     width: fit-content;
     height: fit-content;
 }
@@ -356,14 +355,14 @@ nav a:not(.login-link):hover {
       }
       
       .service-item h3 {
-        font-family: 'Roboto', sans-serif; /* Use a professional font like Roboto */
-        font-size: 2rem; /* Increase the font size */
-        font-weight: 500; /* Adjust the font weight */
-        color: #333; /* Use a darker color for the text */
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #333;
         margin: 1em;
         text-align: center;
-        text-transform: uppercase; /* Make the text uppercase */
-        letter-spacing: 1px; /* Add letter spacing */
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
       
       .service-item p {
@@ -492,7 +491,6 @@ nav a:not(.login-link):hover {
         .footer-bottom a:hover {
         color: #0077cc;
         }
-        /* About Page CSS */
 
         .additional-photos {
             display: flex;
@@ -562,8 +560,8 @@ nav a:not(.login-link):hover {
                     gap: 20px;
                     justify-items: center;
                     margin-top: 25px;
-                    margin-left: 20%; /* Added margin-left */
-                    margin-right: 20%; /* Added margin-right */
+                    margin-left: 20%;
+                    margin-right: 20%;
                 }
                 
                 
@@ -573,8 +571,8 @@ nav a:not(.login-link):hover {
                 }
                 
                 .staff-member img {
-                width: 400px; /* Updated width */
-                height: 400px; /* Updated height */
+                width: 400px;
+                height: 400px;
                 height: auto;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 }
@@ -619,7 +617,6 @@ nav a:not(.login-link):hover {
                     width: 100%;
                   }
 
-                  /* Services Page */
 .product-section {
     display: flex;
     flex-wrap: wrap;
@@ -640,16 +637,16 @@ nav a:not(.login-link):hover {
   }
   
   .product {
-    background-color: #ffffff; /* Change background color to white */
+    background-color: #ffffff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     margin: 10px 20px 10px 0;
-    padding: 20px 20px 40px 20px; /* Increase bottom padding */
+    padding: 20px 20px 40px 20px;
     width: 300px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle box-shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .product img {
@@ -821,22 +818,22 @@ nav a:not(.login-link):hover {
                   }
                   
                   .cart-items-wrapper.scrollable {
-                    max-height: 400px; /* Adjust the value according to your desired height */
+                    max-height: 400px;
                     overflow-y: auto;
                   }
                   
                   .product {
-                    position: relative; /* Add this line to make the product container the reference for the absolute position of the added-to-cart-message */
+                    position: relative;
                   }
                   
                   .added-to-cart-message {
                     color: #008000;
                     font-weight: bold;
                     font-size: 14px;
-                    position: absolute; /* Add this line to position the text absolutely */
-                    bottom: 10px; /* Add this line to adjust the vertical position of the text */
-                    left: 50%; /* Add this line to center the text horizontally */
-                    transform: translateX(-50%); /* Add this line to center the text horizontally */
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
                     opacity: 0;
                     transition: opacity 0.3s ease-in-out;
                   }
