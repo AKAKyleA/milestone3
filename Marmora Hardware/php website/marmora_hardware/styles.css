@@ -619,4 +619,236 @@ nav a:not(.login-link):hover {
                     width: 100%;
                   }
 
-        
+                  /* Services Page */
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    justify-content: center;
+  }
+  
+  .product-section h2 {
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    font-size: 1.5em;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .product {
+    background-color: #ffffff; /* Change background color to white */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 20px 10px 0;
+    padding: 20px 20px 40px 20px; /* Increase bottom padding */
+    width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle box-shadow */
+  }
+  
+  .product img {
+    max-height: 200px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .product h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .product p {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  
+  .product button {
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .product button:hover {
+    background-color: gray;
+  }
+  
+  .product button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  
+                .nav-icons {
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .cart-icon {
+                    cursor: pointer;
+                  }
+                  
+                  .cart-image {
+                    display: block;
+                    max-width: 100%;
+                    max-height: 100%;
+                  }
+
+                  .cart-page {
+                    z-index: 1000;
+                    position: fixed;
+                    top: 0;
+                    right: -400px;
+                    width: 400px;
+                    height: 100%;
+                    background-color: #f4f4f4;
+                    padding: 20px;
+                    box-shadow: -3px 0px 8px rgba(0, 0, 0, 0.1);
+                    transition: right 0.3s;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .cart-page.open {
+                    right: 0;
+                }
+                
+                .cart-page-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+                }
+                
+                .close-btn {
+                    cursor: pointer;
+                    font-size: 20px;
+                }
+                
+                .cart-header {
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+                
+                .cart-item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    padding: 5px;
+                    border-bottom: 1px solid #ccc;
+                }
+                
+                .cart-item h3 {
+                    margin: 0;
+                    font-size: 16px;
+                    flex: 1;
+                    overflow-wrap: break-word;
+                    max-width: 60%;
+                }
+                
+                .cart-item p {
+                    margin: 0;
+                    font-size: 14px;
+                    flex: 0.5;
+                    text-align: right;
+                }
+
+                .header-item {
+                    flex: 1;
+                    text-align: right;
+                }
+                
+                .header-item:first-child {
+                    text-align: left;
+                    max-width: 60%;
+                }
+                
+                .qty-control {
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .qty-arrow {
+                    cursor: pointer;
+                    font-size: 14px;
+                    margin: 0 5px;
+                }
+                
+                .cart-total {
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                
+                .cart-total h3 {
+                    margin: 0;
+                    font-size: 16px;
+                }
+                
+                .cart-total p {
+                    margin: 0;
+                    font-size: 16px;
+                }
+                
+                .proceed-to-checkout {
+                    margin-top: 20px;
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px;
+                    background-color: #333;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+                .cart-items-wrapper {
+                    overflow: hidden;
+                  }
+                  
+                  .cart-items-wrapper.scrollable {
+                    max-height: 400px; /* Adjust the value according to your desired height */
+                    overflow-y: auto;
+                  }
+                  
+                  .product {
+                    position: relative; /* Add this line to make the product container the reference for the absolute position of the added-to-cart-message */
+                  }
+                  
+                  .added-to-cart-message {
+                    color: #008000;
+                    font-weight: bold;
+                    font-size: 14px;
+                    position: absolute; /* Add this line to position the text absolutely */
+                    bottom: 10px; /* Add this line to adjust the vertical position of the text */
+                    left: 50%; /* Add this line to center the text horizontally */
+                    transform: translateX(-50%); /* Add this line to center the text horizontally */
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                  }
+                  
+                  .added-to-cart-message.visible {
+                    opacity: 1;
+                  }
+                
+                
+                
+                  
+                  
+                
+                  
+                                
