@@ -19,25 +19,54 @@ foreach ($_POST as $key => $value) {
             $isEmployee = 1;
             $isManager = 0;
             $isAdmin = 0;
-        } elseif ($new_level == 'manager') {
-            $isEmployee = 0;
-            $isManager = 1;
-            $isAdmin = 0;
-        } elseif ($new_level == 'admin') {
-            $isEmployee = 0;
-            $isManager = 0;
-            $isAdmin = 1;
-        } else {
-            $isEmployee = 0;
-            $isManager = 0;
-            $isAdmin = 0;
-        }
 
-        // Update the user's account level in the database
+     
+            // Update the user's account level in the database
         $sql = "UPDATE users SET isEmployee = $isEmployee, isManager = $isManager, isAdmin = $isAdmin WHERE id = $user_id";
         if (!$connection->query($sql)) {
             $update_successful = false;
         }
+
+
+        } elseif ($new_level == 'manager') {
+            $isEmployee = 1;
+            $isManager = 1;
+            $isAdmin = 0;
+
+            // Update the user's account level in the database
+        $sql = "UPDATE users SET isEmployee = $isEmployee, isManager = $isManager, isAdmin = $isAdmin WHERE id = $user_id";
+        if (!$connection->query($sql)) {
+            $update_successful = false;
+        }
+
+
+        } elseif ($new_level == 'admin') {
+            $isEmployee = 1;
+            $isManager = 1;
+            $isAdmin = 1;
+
+           // Update the user's account level in the database
+        $sql = "UPDATE users SET isEmployee = $isEmployee, isManager = $isManager, isAdmin = $isAdmin WHERE id = $user_id";
+        if (!$connection->query($sql)) {
+            $update_successful = false;
+        }
+
+        } elseif ($new_level == 'customer') {
+            $isEmployee = 0;
+            $isManager = 0;
+            $isAdmin = 0;
+
+            // Update the user's account level in the database
+        $sql = "UPDATE users SET isEmployee = $isEmployee, isManager = $isManager, isAdmin = $isAdmin WHERE id = $user_id";
+        if (!$connection->query($sql)) {
+            $update_successful = false;
+        }
+
+        } elseif ($new_level == 'same') {
+            
+        }
+
+        
     }
 }
 

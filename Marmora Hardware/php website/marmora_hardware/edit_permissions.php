@@ -102,9 +102,9 @@ $result = $connection->query($sql);
                     // Determine the current account level based on the values of isEmployee, isManager, and isAdmin
                     if ($row['isEmployee'] == 1 && $row['isManager'] == 0 && $row['isAdmin'] == 0) {
                         $current_level = 'Employee';
-                    } elseif ($row['isEmployee'] == 0 && $row['isManager'] == 1 && $row['isAdmin'] == 0) {
+                    } elseif ($row['isEmployee'] == 1 && $row['isManager'] == 1 && $row['isAdmin'] == 0) {
                         $current_level = 'Manager';
-                    } elseif ($row['isEmployee'] == 0 && $row['isManager'] == 0 && $row['isAdmin'] == 1) {
+                    } elseif ($row['isEmployee'] == 1 && $row['isManager'] == 1 && $row['isAdmin'] == 1) {
                         $current_level = 'Admin';
                     } else {
                         $current_level = 'Customer';
@@ -117,6 +117,7 @@ $result = $connection->query($sql);
                     echo '<td>' . $current_level . '</td>';
                     echo '<td>';
                     echo '<select name="account_level_' . $row['id'] . '">';
+                    echo '<option value="same">Same</option>';
                     echo '<option value="customer">Customer</option>';
                     echo '<option value="employee">Employee</option>';
                     echo '<option value="manager">Manager</option>';
