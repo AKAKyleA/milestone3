@@ -13,9 +13,6 @@ session_start();
 </head>
 <body>
 
-
-
-
 <div id="cart-page" class="cart-page">
     <div class="cart-page-header">
         <h2>Cart</h2>
@@ -741,10 +738,29 @@ function decrementQuantity(id) {
   cartContent.appendChild(cartTotal);
 
   let checkoutBtn = document.createElement("a");
-  checkoutBtn.href = "checkout.php";
+  
   checkoutBtn.classList.add("proceed-to-checkout");
   checkoutBtn.innerText = "Proceed to Checkout";
   cartContent.appendChild(checkoutBtn);
+
+  checkoutBtn.addEventListener("click", function() {
+    // Send AJAX request to PHP script
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "insert_data.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        console.log(xhr.responseText);
+      }
+    };
+    const data = `cart=${JSON.stringify(cart)}&total=${total.toFixed(2)}`;
+    xhr.send(data);
+
+    // Redirect to checkout page
+    window.location.href = "checkout.php";
+
+});
+
 }
 
   window.decrementQuantity = decrementQuantity;

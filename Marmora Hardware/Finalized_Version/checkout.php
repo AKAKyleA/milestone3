@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 
 
 <!DOCTYPE html>
@@ -219,9 +223,8 @@ function generateReceipt() {
         totalPrice += item.subtotal;
     });
 
-    const tax = totalPrice * 0.065;
+    const tax = totalPrice * 0.0625;
     const grandTotal = totalPrice + tax;
-
 
     const cartDataString = cart.map(item => `${item.id}-${item.quantity}${String.fromCharCode(13)}`).join('');
 
@@ -268,6 +271,13 @@ receiptWindow.document.write("<p style='text-align: center;'>Please have an asso
     setTimeout(function() {
     receiptWindow.print();
   }, 250);
+
+  
+
+
+
+
+
 }
             const viewReceiptBtn = document.querySelector(".btn-view-receipt");
             viewReceiptBtn.addEventListener("click", generateReceipt);
