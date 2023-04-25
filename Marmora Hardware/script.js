@@ -16,6 +16,7 @@ button.addEventListener("click",function(event){{
 })
 function addcart(productPrice,productImg,productName) {
     var addtr = document.createElement("tr")
+    alert("You added this product in your Cart!")
     var cartItem = document.querySelectorAll("tbody tr")
     for (var i=0; i<cartItem.length; i++){
         var productT = document.querySelectorAll(".title")
@@ -92,14 +93,3 @@ cartshow.addEventListener("click",function(){
 cartbtn.addEventListener("click",function(){
     document.querySelector(".cart").style.right = "-100%"
 })
-
-//=====down======
-const itemsPerRow = 4;
-const productItems = document.querySelectorAll('.product-items .product-item');
-
-for (let i = 0; i < productItems.length; i += itemsPerRow) {
-  const rowItems = Array.from(productItems).slice(i, i + itemsPerRow);
-  rowItems.forEach(item => {
-    item.classList.add('product-item--row-' + (i / itemsPerRow));
-  });
-}
