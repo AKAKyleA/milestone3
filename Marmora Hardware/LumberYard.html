@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <title>Lumber Yard Products</title>
+    <title>Lawn & Garden - Marmora Hardware</title>
 </head>
 <body>
     <header>
@@ -24,117 +24,190 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="history.html">History</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><div class="cart-icon">
-                    <p><i class="fas fa-shopping-cart"></i><p><span></span><sup>$</sup></p></p>
+                    <p><i class="fas fa-shopping-cart"></i><p><sup>$</sup><span></span></p></p>
                 </div></li>
             </ul>
-            <a href="login.html">
-                <button class="login-btn">Login</button>
-            </a>
-            </nav>
+            <button class="login-btn">Login</button>
+        </nav>
     </header>
+<style>
 
-    <meta charset="UTF-8">
+.product-item{
+    align-items: center;
+    margin-left: 45px;
+    padding: 25px;
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    font-family: arial;
+}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>black sheep</title>
-        
-    
-    <h1 style="text-align:center">Lumber Yard Products</h1>
-    <br>
-    <section class="product">
-        <div class="container">
+.product-item img {
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+p {
+text-align: center;
+color: grey;
+font-size: 22px;
+}
+
+.product-item button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.product button:hover {
+opacity: 0.7;
+}
+
+/* -----------------------------cart--------------------*/
+.cart {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+}
+.cart h2 {
+    margin-bottom: 20px;
+}
+.cart table {
+    width: 100%;
+}
+.cart table thead tr th:first-child {
+    text-align: left;
+}
+.cart table tr td {
+    margin-bottom: 1px solid white;
+    padding: 12px 0;
+}
+.cart table thead tr th:last-child {
+    text-align: right;
+}
+.cart table tbody tr td:last-child {
+    text-align: right;
+
+}
+/*=============design cart===========*/
+.cart button {
+    margin: 12px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+}
+.cart {
+    position: fixed;
+    height: 100vh;
+    width: 400px;
+    right: 0;
+    top: 0;
+    background-color: rgb(242, 240, 229);
+    padding: 12px 20px;
+    overflow-y: scroll;
+    right: -100%;
+    transition: all 0.3s ease;
+
+}
+.cart i {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.cart-icon i {
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center">Lumber Yard Products</h1>
             <div class="product-items">
                 <div class="product-item">
                     <img src="images/Lumber1.jpg" alt="LumberYard">
-                    <div class="product-item-text">
-                        <p><span>220</span><sup>$</sup></p>
                         <h1 style="font-weight: bold; font-size: 18px;">Lumber Yard 1</h1>
-                        
-                    </div>
+                         <p><sup>$</sup><span>220</span></p>
                     <button>Add to cart</button>
                 </div>
             
-                <div class="product-item">
+                   <div class="product-item">
                     <img src="images/Lumber2.jpg" alt="LumberYard">
-                    <div class="product-item-text">
-                        <p><span>280</span><sup>$</sup></p>
                         <h1 style="font-weight: bold; font-size: 18px;">Lumber Yard 2</h1>
-                        
-                    </div>
+                         <p><sup>$</sup><span>240</span></p>
                     <button>Add to cart</button>
                 </div>
             
-                <div class="product-item">
+                   <div class="product-item">
                     <img src="images/Lumber3.jpg" alt="LumberYard">
-                    <div class="product-item-text">
-                        <p><span>420</span><sup>$</sup></p>
                         <h1 style="font-weight: bold; font-size: 18px;">Lumber Yard 3</h1>
-                        
-                    </div>
+                         <p><sup>$</sup><span>220</span></p>
                     <button>Add to cart</button>
                 </div>
                  
-                <div class="product-item">
+                   <div class="product-item">
                     <img src="images/Lumber4.jpg" alt="LumberYard">
-                    <div class="product-item-text">
-                        <p><span>190</span><sup>$</sup></p>
                         <h1 style="font-weight: bold; font-size: 18px;">Lumber Yard 4</h1>
-                        
-                    </div>
+                         <p><sup>$</sup><span>260</span></p>
                     <button>Add to cart</button>
                 </div>
+                <br>
+                <br>
                 
-                <div class="product-item">
+               <div class="product-item">
                     <img src="images/Lumber5.jpg" alt="LumberYard">
-                    <div class="product-item-text">
-                        <p><span>500</span><sup>$</sup></p>
                         <h1 style="font-weight: bold; font-size: 18px;">Lumber Yard 5</h1>
-                        
-                    </div>
+                         <p><sup>$</sup><span>240</span></p>
                     <button>Add to cart</button>
                 </div>
 
-                <div class="product-item">
-                    <img src="images/Lumber6.jpg" alt="LumberYard">
-                    <div class="product-item-text">
-                        <p><span>450</span><sup>$</sup></p>
+                   <div class="product-item">
+                    <img src="images/Lumber1.jpg" alt="LumberYard">
                         <h1 style="font-weight: bold; font-size: 18px;">Lumber Yard 6</h1>
-                        
-                    </div>
+                         <p><sup>$</sup><span>175</span></p>
                     <button>Add to cart</button>
                 </div>
 
-                <div class="product-item">
-                    <img src="images/Lumber7.jpg" alt="LumberYard">
-                    <div class="product-item-text">
-                        <p><span>500</span><sup>$</sup></p>
-                        <h1 style="font-weight: bold; font-size: 18px;">Lumber Yard 7</h1>
-                        
-                    </div>
-                    <button>Add to cart</button>
-                </div>
-
-                <div class="product-item">
-                    <img src="images/Lumber8.jpg" alt="LumberYard">
-                    <div class="product-item-text">
-                        <p><span>500</span><sup>$</sup></p>
-                        <h1 style="font-weight: bold; font-size: 18px;">Lumber Yard 8</h1>
-                        
-                    </div>
-                    <button>Add to cart</button>
-                </div>
-
-  
-
-
-            </div>          
-        </div>
-    </section>
     <section class="cart">
+        <i class="fas fa-times"></i>
+        <h2>Cart</h2>
+        <form action="">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Select</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div style="text-align: right;" class="price-total">
+                <p style="font-weight: bold;"> Total Price:<span> 0</span><sup>$</sup></p>
+            </div>
+            <a href="payment.html"><button>Place Order</button></a>
+
+    </section>
+
+ <section class="cart">
         <i class="fas fa-times"></i>
         <h2>Cart</h2>
         <form action="">
@@ -152,33 +225,31 @@
                 </tbody>
             </table>
             <div style="text-align: right;" class="price-total">
-                <p style="font-weight: bold;"> Total Price:<span> 0</span><sup>$</sup></p>
+                <p style="font-weight: bold;"> Total Price:<sup>$</sup><span>0</span></p>
             </div>
-            <a href="login.html"><button class="login-btn">Place Order</button></a>>
+            <a href="Checkout.html" button>Place Order</button></a>
         </form>
 
     </section>
-    <script src="script.js"></script>
-    </body>
+   <script src="script.js"></script>
 
-    <footer>
-        <div class="footer-top">
-            <img src="images/truevalue.png" alt="Marmora Hardware Logo" width="200" height="80">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>29 S Shore Rd, Marmora, NJ 08223</p>
-            <p>Phone: (609) 390-8499</p>
-            <p>Mon-Sat: 8am-5pm, Sun: 9am-3pm</p>
-            <a href="https://www.facebook.com/people/Marmora-Hardware/100032190926433/" target="_blank">Facebook</a>
-        </div>
-    </footer>
-    
-    </body>
-    </html>
+</body>
+<footer>
+    <div class="footer-top">
+        <img src="images/truevalue.png" alt="Marmora Hardware Logo" width="200" height="80">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>29 S Shore Rd, Marmora, NJ 08223</p>
+        <p>Phone: (609) 390-8499</p>
+        <p>Mon-Sat: 8am-5pm, Sun: 9am-3pm</p>
+        <a href="https://www.facebook.com/people/Marmora-Hardware/100032190926433/" target="_blank">Facebook</a>
+    </div>
+</footer>
+</html>

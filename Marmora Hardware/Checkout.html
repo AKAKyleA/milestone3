@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <title>Checkout - Marmora Hardware</title>
+</head>
+    <header>
+        <div class="top-bar">
+            <p>29 S Shore Rd, Marmora, NJ 08223</p>
+            <p>Mon-Sat: 8am-5pm, Sun: 9am-3pm</p>
+        </div>
+        <nav>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Marmora Hardware Logo" width="250" height="100">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            min-height: 100%;
+        }
+         
+        body {
+            font-family: 'Roboto',
+            sans-serif;
+            background-color: #e7e7e7;
+        }
+
+        h1 {
+            margin: 15px;
+        }
+        .main-form {
+            align-content: center;
+            justify-content: center;
+            display: inline-table;
+            width: 360px;
+            height: 480px;
+            margin: 50px 15px 15px 225px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #fff;
+            box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10);
+        }
+        .form-header {
+            height: 60px;
+            padding: 20px 30px 0;
+            border-bottom: 1px solid #e1e8ee;
+        }
+         
+        .form-body {
+            height: 340px;
+            padding: 30px 30px 20px;
+        }
+        .title {
+            font-size: 18px;
+            margin: 0;
+            color: #5e6977;
+        }
+        .card-number,
+        .cvv-input input,
+        .month select,
+        .year select {
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 14px;
+        }
+         
+        .card-number,
+        .month select,
+        .year select {
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 14px;
+        }
+         
+        .card-number,
+        .cvv-details,
+        .cvv-input input,
+        .month select,
+        .year select {
+            opacity: .7;
+            color: #86939e;
+        }
+        .card-number {
+            width: 100%;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border: 2px solid #e1e8ee;
+            border-radius: 6px;
+        }
+        .month select,
+        .year select {
+            width: 145px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border: 2px solid #e1e8ee;
+            border-radius: 6px;
+            background: url('caret.png') no-repeat;
+            background-position: 85% 50%;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+        }
+         
+        .month select {
+            float: left;
+        }
+         
+        .year select {
+            float: right;
+        }
+        .cvv-input input {
+            float: left;
+            width: 145px;
+            padding-left: 20px;
+            border: 2px solid #e1e8ee;
+            border-radius: 6px;
+            background: #fff;
+        }
+ 
+        .cvv-details {
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 16px;
+            float: right;
+            margin-bottom: 20px;
+        }
+ 
+        .cvv-details p {
+            margin-top: 6px;
+        }
+        .paypal-btn,
+        .proceed-btn {
+            text-align: center;
+            background-color: blue;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 6px;
+        }
+ 
+        .proceed-btn {
+            margin-bottom: 10px;
+            background: #7dc855;
+        }
+ 
+        .paypal-btn a,
+        .proceed-btn a {
+            text-decoration: none;
+        }
+ 
+        .proceed-btn a {
+            color: #fff;
+        }
+ 
+        .paypal-btn a {
+            color: #fff;
+        }
+
+
+        .customer-info {
+            width: 360px;
+            height: 400px;
+            margin: 60px auto 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #fff;
+            box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10);
+        }
+    </style>
+    <body>
+        <h1 style="text-align:center">Checkout</h1>
+        <form class="main-form">
+  <div class="form-header">
+    <h4 class="title">Credit Card Information</h4>
+  </div>
+ 
+  <div class="form-body">
+    <!-- Card Number -->
+    <input type="text" class="card-number" placeholder="Card Number">
+ 
+    <!-- Date Field -->
+    <div class="date-field">
+      <div class="month">
+        <select name="Month">
+          <option value="january">January</option>
+          <option value="february">February</option>
+          <option value="march">March</option>
+          <option value="april">April</option>
+          <option value="may">May</option>
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+          <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select>
+      </div>
+      <div class="year">
+        <select name="Year">
+          <option value="2016">2023</option>
+          <option value="2017">2024</option>
+          <option value="2018">2025</option>
+          <option value="2019">2026</option>
+          <option value="2020">2027</option>
+          <option value="2021">2028</option>
+          <option value="2022">2029</option>
+          <option value="2023">2030</option>
+          <option value="2024">2031</option>
+        </select>
+      </div>
+    </div>
+ 
+    <!-- Card Verification Field -->
+    <div class="card-verification">
+      <div class="cvv-input">
+        <input type="text" placeholder="CVV">
+      </div>
+      <div class="cvv-details">
+        <p>3 or 4 digits usually found <br> on the signature strip</p>
+      </div>
+    </div>
+ 
+    <!-- Buttons -->
+    <button type="submit" class="proceed-btn"><a href="#">Proceed to Checkout</a></button>
+    <button type="submit" class="paypal-btn"><a href="#">Pay With PayPal</a></button>
+  </div>
+</form>
+<html>
+
+<script>
+
+function onCheckChange(event) {
+
+bilName = document.getElementById("bilName");
+
+bilAddress = document.getElementById("bilAddress");
+
+bilCity = document.getElementById("bilCity");
+
+bilState = document.getElementById("bilState");
+
+bilZip = document.getElementById("bilZip");
+
+shipName = document.getElementById("shipName");
+
+shipAddress = document.getElementById("shipAddress");
+
+shipCity = document.getElementById("shipCity");
+
+shipState = document.getElementById("shipState");
+
+shipZip = document.getElementById("shipZip");
+
+if (event.checked) {
+
+// if true set all the values of billing address to shipping address
+
+shipName.value = bilName.value;
+
+shipAddress.value = bilAddress.value;
+
+shipCity.value = bilCity.value;
+
+shipState.value = bilState.value;
+
+shipZip.value = bilZip.value;
+
+// set the ship details to readonly true
+
+shipName.readOnly = true;
+
+shipAddress.readOnly = true;
+
+shipCity.readOnly = true;
+
+shipState.readOnly = true;
+
+shipZip.readOnly = true;
+
+} else {
+
+// if true set all the values of shipping address to empty
+
+shipName.value = "";
+
+shipAddress.value = "";
+
+shipCity.value = "";
+
+shipState.value = "";
+
+shipZip.value = "";
+
+// set the ship details to readonly false
+
+shipName.readOnly = false;
+
+shipAddress.readOnly = false;
+
+shipCity.readOnly = false;
+
+shipState.readOnly = false;
+
+shipZip.readOnly = false;
+
+}
+
+}
+
+</script>
+
+ <form class="main-form">
+  <div class="form-header">
+    <h4 class="title">Customer Information</h4>
+  </div>
+ 
+  <div class="form-body">
+
+<a colspan="2">Billing Address</a>
+<br>
+<a>Name</a>
+<input type="text" id="bilName"> 
+<br>
+<a>Address</a>
+<input type="text" id="bilAddress">
+<br>
+<a>City</a>
+<input type="text" id="bilCity">
+<br>
+<a>State</a>
+<input type="text" id="bilState">
+<br>
+<a>Zip</a>
+<input type="text" id="bilZip"> 
+<br>
+<a>Shipping address is the same as billing</a>
+<input type="checkbox" id="checkSame" onchange="onCheckChange(this)">
+<br>
+<a colspan="2">Shipping Address</a>
+<br>
+<a>Name</a>
+<input type="text" id="shipName"> 
+<br>
+<a>Address</a>
+<input type="text" id="shipAddress"> 
+<br>
+<a>City</a>
+<input type="text" id="shipCity"> 
+<br>
+<a>State</a>
+<input type="text" id="shipState"> 
+<br>
+<a>Zip</a>
+<input type="text" id="shipZip"> 
+<br>
+</div>
+</form>
+
+ </body>
+    <footer>
+    <div class="footer-top">
+        <img src="images/truevalue.png" alt="Marmora Hardware Logo" width="200" height="80">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>29 S Shore Rd, Marmora, NJ 08223</p>
+        <p>Phone: (609) 390-8499</p>
+        <p>Mon-Sat: 8am-5pm, Sun: 9am-3pm</p>
+        <a href="https://www.facebook.com/people/Marmora-Hardware/100032190926433/" target="_blank">Facebook</a>
+    </div>
+</footer>
+</html>
+
