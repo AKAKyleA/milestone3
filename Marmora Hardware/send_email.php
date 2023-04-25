@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $message = $_POST["message"];
 
-    $to = "your_email@example.com";
+    $to = "marmorahardware@truevalue.net";
     $subject = "New Contact Form Submission";
     $body = "First Name: " . $first_name . "\n";
     $body .= "Last Name: " . $last_name . "\n";

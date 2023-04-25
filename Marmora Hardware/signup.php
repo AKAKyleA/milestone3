@@ -1,6 +1,5 @@
 
 
-
 <?php
 $showAlert = false; 
 $showError = false; 
@@ -107,7 +106,7 @@ $cpassword = $_POST["psw-repeat"];
     
             <strong>Success!</strong> Your account is 
             now created and you can login. 
-            <p>Go to <a href="login.html">Sign in</a>.</p>
+            <p>Go to <a href="login.php">Sign in</a>.</p>
             <button type="button" class="close"
                 data-dismiss="alert" aria-label="Close"> 
                 <span aria-hidden="true">×</span> 

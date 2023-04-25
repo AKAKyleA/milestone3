@@ -81,16 +81,16 @@
     <img style="margin-bottom: 25px;" src="images/logo-transparent.png" alt="Marmora Hardware Logo" width="400" height="180" style="padding-top: 10px; margin-top: 40px;">
     <div class="signup-container">
         <h2 style="margin-top: -20px;">Sign Up</h2>
-        <form class="signup-form" action="register.php" method="post">
-            <input type="text" name="first_name" placeholder="First Name" required>
-            <input type="text" name="last_name" placeholder="Last Name" required>
+        <form class="signup-form" action="signup.php" method="post">
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" placeholder="Last Name" required>
             <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
             <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="repeat_password" placeholder="Repeat Password" required>
+            <input type="password" name="psw-repeat" placeholder="Repeat Password" required>
             <input type="submit" value="Sign Up">
         </form>
         <div class="additional-options">
-            <p style="margin-top: 5px; margin-bottom: -15px;">Already have an account? <a href="login.html" style="text-decoration: underline;">Log in.</a></p>
+            <p style="margin-top: 5px; margin-bottom: -15px;">Already have an account? <a href="login.php" style="text-decoration: underline;">Log in.</a></p>
           </div>
           </div>
           

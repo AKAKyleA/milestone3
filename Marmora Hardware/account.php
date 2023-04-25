@@ -43,6 +43,7 @@ nav ul {
     justify-content: space-around;
     width: 35%;
     margin-left: -1%;
+    margin-right: 365px;
 }
 
 nav li {
@@ -68,19 +69,22 @@ nav a:not(.login-link):hover {
 }
 
 .login-btn {
-    background-color: white;
-    color: #333;
-    border: 2px solid #333;
-    padding: 0.5em 1em;
-    font-size: 18px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Increase font size */
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    padding: 10px 20px; /* Increase padding for a larger button */
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-right: 20px; /* Add margin to move the button slightly to the left */
 }
 
 .login-btn:hover {
-    background-color: #007bff;
-    color: #ffffff;
-    border-color: #007bff;
+    background-color: #2980b9;
 }
 
     .main-content {
@@ -94,12 +98,16 @@ nav a:not(.login-link):hover {
         margin-bottom: 2em;
     }
 
-    .account-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2em;
-        padding-bottom: 2em;
-    }
+    .account-wrapper {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .account-grid {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 2em;
+        }
 
     .account-container {
         background-color: white;
@@ -177,7 +185,7 @@ nav a:not(.login-link):hover {
 
 <body>
 
-    <header>
+<header>
         <div class="top-bar">
             <p>29 S Shore Rd, Marmora, NJ 08223</p>
             <p>Mon-Sat: 8am-5pm, Sun: 9am-3pm</p>
@@ -187,94 +195,84 @@ nav a:not(.login-link):hover {
                 <img src="images/logo.png" alt="Marmora Hardware Logo" width="250" height="100">
             </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="services.php">Services</a></li>
+                <li><a href="history.php">History</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
             </ul>
-            <a href="login.html" class="login-link">
-                <button class="login-btn">Login</button>
-            </a>
+
+</nav>
         </nav>
     </header>
 
     <div class="main-content">
-    
-    <div class="account-grid">
-        <div class="account-container">
-            <h2>Account Information</h2>
-            <div class="account-info">
-                <div class="account-info-text">
-                    <p>First Name: <span class="value"><?php echo
-$_SESSION['firstname']; ?></span></p>
-                    <p>Last Name: <span class="value">Doe</span></p>
-                    <p>Email: <span class="value">johndoe@example.com</span></p>
+    <div class="account-wrapper">
+        <div class="account-grid">
+            <!-- Account Information -->
+            <div class="account-container">
+                <h2>Account Information</h2>
+                <div class="account-info">
+                    <div class="account-info-text">
+                        <p>First Name: <span class="value"><?php echo $_SESSION['firstname']; ?></span></p>
+                        <p>Last Name: <span class="value"><?php echo $_SESSION['lastname']; ?></span></p>
+                        <p>Email: <span class="value"><?php echo $_SESSION['email']; ?></span></p>
+                    </div>
+                    <!-- Buttons available to all account types -->
+                    <button onclick="window.location.href='confirm_password.php'">Edit Account</button>
+                    <button onclick="window.location.href='order_history.php'">View Order History</button>
                 </div>
-                <!-- Buttons available to all account types -->
-                <button onclick="window.location.href='confirm_password.html'">Edit Account</button>
-                <button onclick="window.location.href='order_history.html'">View Order History</button>
             </div>
-            
-       
-            
-    </div>
-    <!-- Employee section -->
-    <?php 
-    
 
-    if ($_SESSION["isEmployee"] == 1) { ?>
-    <div class="account-container">
-        <h2>Employee Information</h2>
-        <div class="account-info">
-            <div class="account-info-text">
-                <p>First Name: <span class="value"><?php echo
-$_SESSION['firstname']; ?></span></p>
-                <p>Last Name: <span class="value">Doe</span></p>
-                <p>Email: <span class="value">johndoe@example.com</span></p>
-            </div>
-            <p>Employee ID: <!-- Display employee ID here --></p>
-            <button onclick="window.location.href='view_schedule.html'">View Schedule</button>
-        </div>
-    </div>
-    <?php } ?>
-</div>
-<div class="account-grid">
-    <!-- Manager section -->
-<?php if ($_SESSION["isManager"] == 1) { ?>
-    <div class="account-container">
-        <h2 style="text-align: center; margin-bottom: 1em;">Manager Information</h2>
-        <div style="text-align: center;">
-            <button onclick="window.location.href='create_schedule_form.html'">Create Schedules</button>
-            <button onclick="window.location.href='log_sales.html'" >Log Sales</button>
-        </div>
-    </div>
-<?php } ?>
+            <!-- Employee section -->
+            <?php 
+            if ($_SESSION["isEmployee"] == 1) { ?>
+                <div class="account-container">
+                    <h2>Employee Information</h2>
+                    <div class="account-info">
+                        <p>Employee ID: <span class="value">#<?php echo $_SESSION['id']; ?></span></p>
+                        <button onclick="window.location.href='view_schedule.php'">View Schedule</button>
+                    </div>
+                </div>
+            <?php } ?>
 
-<!-- Admin section -->
-<?php if ($_SESSION["isAdmin"] == 1) { ?>
-    <div class="account-container">
-        <h2 style="text-align: center; margin-bottom: 1em;">Admin Information</h2>
-        <div style="text-align: center;">
-            <button onclick="window.location.href='edit_permissions.html'">Edit Accounts</button>
-            <button onclick="window.location.href='view_sales.html'">View Sales</button>
-        </div>
-    </div>
-<?php } ?>
-</div>
+            <!-- Manager section -->
+            <?php if ($_SESSION["isManager"] == 1) { ?>
+                <div class="account-container">
+                    <h2 style="text-align: center; margin-bottom: 1em;">Manager Information</h2>
+                    <div style="text-align: center;">
+                        <button onclick="window.location.href='create_schedule_form.php'">Create Schedules</button>
+                        <button onclick="window.location.href='all_schedules.php'" >View Schedules</button>
+                    </div>
+                </div>
+            <?php } ?>
 
-<button style="margin-bottom: 25px;" class="logout-btn" onclick="window.location.href='logout.php'">Log Out</button>
+            <!-- Admin section -->
+            <?php if ($_SESSION["isAdmin"] == 1) { ?>
+                <div class="account-container">
+                    <h2 style="text-align: center; margin-bottom: 1em;">Admin Information</h2>
+                    <div style="text-align: center;">
+                        <button onclick="window.location.href='edit_permissions.php'">Edit Accounts</button>
+                        <button onclick="window.location.href='view_sales.php'">View Sales</button>
+                    </div>
+                </div>
+            <?php } ?>
+
+        </div> <!-- account-grid -->
+    </div> <!-- account-wrapper -->
+
+    <button style="margin-bottom: 25px;" class="logout-btn" onclick="window.location.href='logout.php'">Log Out</button>
 </div>
 
 <footer>
     <div class="footer-top">
         <img src="images/truevalue.png" alt="Marmora Hardware Logo" width="200">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="history.php">History</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </div>
     <div class="footer-bottom">
